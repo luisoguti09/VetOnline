@@ -1,0 +1,7 @@
+{
+  "name": "vetOnline",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
