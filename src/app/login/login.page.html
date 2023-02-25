@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>  
+    <ion-item fill="solid">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" ngModel email></ion-input>
+      <ion-note slot="helper">Ingrese un correo valido</ion-note>
+      <ion-note slot="error">Invalid email</ion-note>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" value="password"></ion-input>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
