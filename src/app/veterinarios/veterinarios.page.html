@@ -1,6 +1,7 @@
 <ion-header>
   <ion-toolbar color="toolbar-color">
     <ion-title>Veterinarios</ion-title>
+    <ion-searchbar placeholder="Buscar" animated (ionChange) =" searchVet($event)"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
@@ -10,7 +11,7 @@
   <ion-list>
     <ion-list-header> Offline </ion-list-header>
 
-    <ion-item *ngFor="let vet of vets">
+    <ion-item *ngFor="let vet of searchedvets">
       <ion-avatar slot="start">
         <img src="../../assets/veterinarios-avatar/{{vet.avatar}}" />
       </ion-avatar>

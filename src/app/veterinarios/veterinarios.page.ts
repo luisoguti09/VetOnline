@@ -10,7 +10,9 @@ import { map } from 'rxjs/operators';
 })
 export class VeterinariosPage implements OnInit {
 
+  veterinarios: any = [];
   vets: any = [];
+  searchedvets: any;
 
   constructor(
     private router: Router,
@@ -19,21 +21,32 @@ export class VeterinariosPage implements OnInit {
 
   ngOnInit() {
 
-    this.getVeterinarios().subscribe(res =>{
+    this.getVeterinarios().subscribe(res => {
       console.log("Res", res)
-      this.vets = res; 
+      this.vets = res;
+      this.searchedvets = this.vets;
     });
 
   }
 
-  getVeterinarios(){
+  getVeterinarios() {
     return this.http
-    .get("assets/files/veterinarios.json")
-    .pipe(
-      map((res: any) =>{
-        return res.data;
-      }
-      ));
+      .get("assets/files/veterinarios.json")
+      .pipe(
+        map((res: any) => {
+          return res.data;
+        }
+        ));
   }
 
+  searchVet(event: any) {
+    const text = event.target.value;
+    this.searchedvets = this.vets;
+    if (text && text.trim() != '') {
+      this.searchedvets = this.searchedvets.filter((vets: any)=> {
+        return (this.vets.name.toLowerCase().indexOf(text.toLowerCase()) - 1)
+      })
+    } 
+
+  }
 }
