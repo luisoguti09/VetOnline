@@ -8,26 +8,27 @@ import { LoginServiceService } from '../services/login-service.service';
 
 })
 export class LoginPage implements OnInit {
-  form!: FormGroup;
-  fomrs = new FormControl('');
+  
+  public form = new FormGroup({
+    fomrs: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required]),
+    pass: new FormControl('', [Validators.required]),
+  });
 
   constructor(
-    private logServ : LoginServiceService ,
+    private logServ: LoginServiceService,
     private fb: FormBuilder
   ) {
-    
+
   }
 
   ngOnInit() {
-    this.form = this.fb.group({
-      usuario: [null, Validators.required],
-      password: [null, Validators.required]
-  });
+    
   }
 
-  loguedUser(){
+  loguedUser() {
     console.log(this.form?.get('usuario')?.value);
-    
+
   }
 
 }
