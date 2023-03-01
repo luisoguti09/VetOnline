@@ -43,10 +43,9 @@ export class VeterinariosPage implements OnInit {
     const text = event.target.value;
     this.searchedvets = this.vets;
     if (text && text.trim() != '') {
-      this.searchedvets = this.searchedvets.filter((vets: any)=> {
-        return (this.vets.name.toLowerCase().indexOf(text.toLowerCase()) - 1)
-      })
+      this.searchedvets = this.searchedvets.filter((vet: any)=> {
+        return (vet.name.toLowerCase().indexOf(text.toLowerCase()) >- 1);
+      }) 
     } 
-
   }
 }

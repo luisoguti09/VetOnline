@@ -1,21 +1,20 @@
 <ion-header>
-  <ion-toolbar color="toolbar-color">
+  <ion-toolbar >
     <ion-title>Veterinarios</ion-title>
-    <ion-searchbar placeholder="Buscar" animated (ionChange) =" searchVet($event)"></ion-searchbar>
+    <ion-searchbar placeholder="Buscar" animated (ionChange)=" searchVet($event)"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
-
-
 <ion-content color="my-color">
-
   <ion-list>
-    <ion-list-header> Offline </ion-list-header>
-
+    <ion-list-header> On Line </ion-list-header>
     <ion-item *ngFor="let vet of searchedvets">
       <ion-avatar slot="start">
         <img src="../../assets/veterinarios-avatar/{{vet.avatar}}" />
       </ion-avatar>
-      <ion-icon name="logo-whatsapp" slot="end"></ion-icon>
+      <ion-icon name="logo-whatsapp" size="md" slot="end"></ion-icon>
+      <ion-icon name="call" size="md" slot="end"></ion-icon>
+      <ion-icon name="mail" size="md" slot="end"></ion-icon>
+      <ion-icon name="location" size="md" slot="end"></ion-icon>
       <ion-label>
         <h2>{{vet.name}}</h2>
         <h3>{{vet.description}}</h3>
@@ -25,8 +24,5 @@
         <h6>email: {{vet.email}}</h6>
       </ion-label>
     </ion-item>
-
-    
-  </ion-list>
-
+    </ion-list>
 </ion-content>

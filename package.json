@@ -25,6 +25,7 @@
     "@capacitor/haptics": "4.1.0",
     "@capacitor/keyboard": "4.1.1",
     "@capacitor/status-bar": "4.1.1",
+    "@capacitor/toast": "^4.1.0",
     "@ionic/angular": "^6.1.9",
     "cordova-plugin-advanced-http": "^3.3.1",
     "ionicons": "^6.0.3",

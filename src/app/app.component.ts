@@ -9,4 +9,7 @@ export class AppComponent {
   
   public labels = ['Consejos', 'Tinder de Mascotas', 'Notas', 'Tabla de Alimentacion', 'Querés viajar?', 'Recordatorios'];
   constructor() {}
+
+  
+
 }
