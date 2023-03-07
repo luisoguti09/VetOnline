@@ -4,26 +4,24 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="backgroundLog">
 
 
   <ion-card>
-    <ion-card-header>
-      <ion-card-title> Login </ion-card-title>
-    </ion-card-header>
+    <img src="../../assets/backLog.png" alt="logoVet" class="img-card"> 
     <ion-card-content>
       <form (ngSubmit)="loguedUser()" [formGroup]="form">
         <ion-list>
           <ion-item fill="solid">
             <ion-label position="floating" >Email</ion-label>
-            <ion-input formControlName="email" type="email" ></ion-input>
+            <ion-input formControlName="email" type="email"  class="custom"></ion-input>
             <ion-note slot="helper">Ingrese un correo valido</ion-note>
             <ion-note slot="error">Invalid email</ion-note>
           </ion-item>
 
           <ion-item>
             <ion-label position="floating">Contraseña</ion-label>
-            <ion-input formControlName="pass" type="password" value="password" ></ion-input>
+            <ion-input formControlName="pass" type="password" value="password" class="custom" ></ion-input>
           </ion-item>
         </ion-list>
       </form>
@@ -31,17 +29,10 @@
       <button type="submit" (click)="loguedUser()" class="colorLogin button">
         Ingresar
       </button>
+      <a href="#" [routerLink]="['/registro']" class="footLogin">Registrarse</a>
     </div>
   
     </ion-card-content>
   </ion-card>
+
 </ion-content>
-<ion-footer>
-  <ion-toolbar color="footLogin">
-    <ion-buttons slot="end">
-      <ion-button [routerLink]="['/registro']">
-        Registrarse
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-footer>

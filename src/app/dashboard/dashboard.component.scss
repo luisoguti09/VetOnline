@@ -1,6 +1,5 @@
-.dashboard-content{
-    background: url('/assets/logo/logoVetOnline.jpeg');
-    width: 300px;
-    height: 300px;
-
+ion-content.backgroundDash{
+    --background: url(/vetOnline/src/assets/logoVetOnline.jpeg) 0 0/100% 100% no-repeat;
+    background-size: cover;
+    background-position: center;
 }
