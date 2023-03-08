@@ -1,12 +1,17 @@
 $main-color: #920ba6;
+
 /*boton ingresar*/
 .colorLogin{
     background-color: #00e7d0;
-    text-align: center;
+    color: #ddd;
+    font-weight: bold;
+    text-align: center !important;
     border-radius: 20px;
     text-shadow: #000;
     margin-left: auto;
     margin-right: auto;
+    width: 40%;
+    margin-top: 10px;
 }
 /*link registrar*/
 .footLogin{
@@ -17,10 +22,7 @@ $main-color: #920ba6;
     color: #00e7d0;
     margin-top: 50px;
     margin-right: 100px;
-}
-
-.footLogin a:hover{
-  color: #fff;
+    display: flex;
 }
 
 .button{
@@ -48,8 +50,9 @@ $main-color: #920ba6;
 }
 
 ion-toolbar {
-    --ion-background: #920ba6;
+    --background: #920ba6;
     --color: white;
+    border-radius: 10px;
   }
 
   ion-card {
@@ -59,7 +62,7 @@ ion-toolbar {
     margin-top: 100px;
   }
   ion-input.custom {
-    --background: #00e7d0;
+    
     --color:#000 ;
     --placeholder-color: #ddd;
     --placeholder-opacity: .8;
@@ -67,10 +70,18 @@ ion-toolbar {
     --padding-bottom: 10px;
     --padding-end: 10px;
     --padding-start: 10px;
-    
+    display: block;
+    width: 100%;
+    border-radius: 0.5rem;  
+    border: none;  
   }
+
   ion-card-title.colorCus{
     --color:white;
+  }
+  ion-card-header{
+    --background: #920ba6;
+    --color: white;
   }
 
   ion-card-header.ios {

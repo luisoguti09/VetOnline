@@ -3,10 +3,7 @@
     <ion-title>Vet Online</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content class="backgroundLog">
-
-
   <ion-card>
     <img src="../../assets/backLog.png" alt="logoVet" class="img-card"> 
     <ion-card-content>
@@ -18,7 +15,6 @@
             <ion-note slot="helper">Ingrese un correo valido</ion-note>
             <ion-note slot="error">Invalid email</ion-note>
           </ion-item>
-
           <ion-item>
             <ion-label position="floating">Contraseña</ion-label>
             <ion-input formControlName="pass" type="password" value="password" class="custom" ></ion-input>
@@ -26,12 +22,11 @@
         </ion-list>
       </form>
       <div class="button-container">
-      <button type="submit" (click)="loguedUser()" class="colorLogin button">
+      <button type="submit" (click)="loguedUser()" class="colorLogin Button" [disabled]="form.invalid">
         Ingresar
       </button>
       <a href="#" [routerLink]="['/registro']" class="footLogin">Registrarse</a>
     </div>
-  
     </ion-card-content>
   </ion-card>
 

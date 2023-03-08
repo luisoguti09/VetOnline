@@ -1,5 +1,6 @@
-ion-content.backgroundDash{
-    --background: url(/vetOnline/src/assets/logoVetOnline.jpeg) 0 0/100% 100% no-repeat;
+ion-content.backgroundDashs{
+    --background: url(../../assets/logoVetOnline.jpeg) 0 0/100% 100% no-repeat;
+    display: flex;
     background-size: cover;
     background-position: center;
 }
