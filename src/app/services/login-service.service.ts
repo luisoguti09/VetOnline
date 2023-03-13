@@ -37,4 +37,5 @@ export class LoginServiceService {
   tipoUser(){
    return this.httpClient.get(`${this.url}/tipoUsuario.php`)
   }
+
 }

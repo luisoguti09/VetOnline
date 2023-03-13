@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AlertController } from '@ionic/angular';
+import { LoginServiceService } from '../services/login-service.service';
+import { VeterinariosPageRoutingModule } from '../veterinarios/veterinarios-routing.module';
+import { VeterinariosServiceService } from '../services/veterinarios-service.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +12,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  public form: FormGroup;
+  public veterinarios: any;
+
+  constructor(
+    private logServ: LoginServiceService,
+    private fb: FormBuilder,
+    private vetServ: VeterinariosServiceService
+  ) { 
+    this.form = this.fb.group({
+      fomrs: new FormControl('', [Validators.required]),
+      
+    })
+  }
 
   public appPages = [
     { title: 'Veterinarios', url: '/veterinarios', icon: 'medkit' },
@@ -16,7 +33,11 @@ export class DashboardComponent implements OnInit {
   ];
   public labels = ['Consejos', 'Tinder de Mascotas', 'Notas', 'Tabla de Alimentacion', 'Querés viajar?', 'Recordatorios'];
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.vetServ.mostrarVets().subscribe(res=>{
+      this.veterinarios = res;  
+    })
+  }
 
   shareApp(){
     

@@ -27,12 +27,14 @@ export class LoginPage implements OnInit {
   loguedUser() {
     console.log(this.form?.get('email')?.value);
     
-    this.logServ.loginSucc(this.form?.get('email')?.value , this.form?.get('pass')?.value)
-    .subscribe(res =>{
-      if (res.success  ) {
-        this.router.navigate(['dashboard']);
-      } else {
-        console.log("te equivocaste perrito");
+    this.logServ.loginSucc(
+      this.form?.get('email')?.value , 
+      this.form?.get('pass')?.value)
+      .subscribe(res =>{
+        if (res.success  ) {
+         this.router.navigate(['dashboard']);
+        } else {
+          console.log("te equivocaste perrito");
       }
     });
   }

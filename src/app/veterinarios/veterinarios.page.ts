@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Event, Router } from "@angular/router";
 import { map } from 'rxjs/operators';
 import { InfiniteScrollCustomEvent } from '@ionic/angular';
+import { VeterinariosServiceService } from '../services/veterinarios-service.service';
 
 @Component({
   selector: 'app-veterinarios',
@@ -19,28 +20,24 @@ export class VeterinariosPage implements OnInit {
   constructor(
     private router: Router,
     private http: HttpClient,
+    private vetServ: VeterinariosServiceService,
   ) { }
 
   ngOnInit() {
 
-    this.getVeterinarios().subscribe(res => {
-      console.log("Res", res)
-      this.vets = res;
-      this.searchedvets = this.vets;
-    });
+    this.getVeterinarios();
+    
+    this.searchedvets = this.vets;
 
     this.generateItems();
 
   }
 
   getVeterinarios() {
-    return this.http
-      .get("assets/files/veterinarios.json")
-      .pipe(
-        map((res: any) => {
-          return res.data;
-        }
-        ));
+    this.vetServ.mostrarVets().subscribe(res =>{
+      this.vets = res
+    });
+      
   }
 
   searchVet(event: any) {
@@ -66,5 +63,7 @@ export class VeterinariosPage implements OnInit {
       (ev as InfiniteScrollCustomEvent).target.complete();
     }, 500);
   }
+
+
 }
 

@@ -47,7 +47,4 @@ guardar(){
       error => console.log(error)      
     );
   }
-    
-  
-
 }
