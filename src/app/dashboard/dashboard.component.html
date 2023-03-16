@@ -1,28 +1,34 @@
-
 <ion-app>
   <ion-content class="backgroundDashs">
-  <ion-split-pane  contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">   
+    <ion-split-pane contentId="main-content">
+      <ion-menu contentId="main-content" type="overlay">
         <ion-list id="inbox-list">
           <ion-list-header>Bienvenido</ion-list-header>
           <ion-note>veteonline@gmail.com</ion-note>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
+              routerLinkActive="selected">
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
-        </ion-list>   
-    </ion-menu> 
-    <ion-router-outlet id="main-content"></ion-router-outlet>
-  </ion-split-pane>
-  <ion-list>
-    <ion-item>
-      <div *ngFor="let vet of veterinarios" class="listaVets">
-        <ion-label>{{vet.nombre}}</ion-label>
-        <ion-label>{{vet.apellido}}</ion-label>
+        </ion-list>
+      </ion-menu>
+      <ion-router-outlet id="main-content"></ion-router-outlet>
+    </ion-split-pane>
+    <ion-list>
+      <div>
+        <ion-item *ngFor="let vet of veterinarios" class="listaVets">
+          <ion-avatar slot="start">
+            <img src="../../assets/veterinarios-avatar/veterinaria4.jpg" alt="">
+          </ion-avatar>
+          <ion-label>{{vet.nombre}} {{vet.apellido}} </ion-label>
+          
+          <ion-avatar slot="end">
+            <ion-icon size="large" name="phone-portrait-outline"></ion-icon>
+          </ion-avatar>
+        </ion-item>
       </div>
-    </ion-item>
-  </ion-list>
+    </ion-list>
   </ion-content>
 </ion-app>

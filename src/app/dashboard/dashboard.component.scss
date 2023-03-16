@@ -1,12 +1,12 @@
 ion-content.backgroundDashs{
-    --background: url(../../assets/logoVetOnline.jpeg) 0 0/100% 100% no-repeat;
+    --background: url(../../assets/logoVetOnline.jpeg);
     display: flex;
-    background-size: cover;
-    background-position: center;
+    position: absolute;
+    margin-top: 0;
 }
 .listaVets{
     display: flex;
     flex-direction: row;
-    width: 100%;
+    text-align: center;
 
 }

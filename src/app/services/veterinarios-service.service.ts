@@ -5,12 +5,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class VeterinariosServiceService {
-  url = 'http://vetonline.cu.ma';
+  url = 'https://vetonline.cu.ma';
   constructor(
     private httpClient: HttpClient
-  ) { 
-
-  }
+  ) {}
 
   mostrarVets(){
     return this.httpClient.get(`${this.url}/veterinarios.php`);
