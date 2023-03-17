@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title color="headerReg">Registro</ion-title>
+    <ion-title color="headerReg">Firma Shrek</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -34,7 +34,7 @@
           <ion-label position="floating">Confirme Contraseña</ion-label>
           <ion-input formControlName="confirmPass" type="password"> </ion-input>
         </ion-item>
-        <ion-select formControlName="tipoUsuario" placeholder="Tipo de usuario">
+        <ion-select formControlName="tipoUsuario" placeholder="Tipo de usuario" class="selectT">
           <ion-select-option  *ngFor="let tipo of tipoUsuarios" [value]="tipo">{{ tipo.descripcion }}</ion-select-option>
         </ion-select>
         <ion-button (click)="guardar()" class="botonReg" >

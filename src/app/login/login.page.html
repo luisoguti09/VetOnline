@@ -4,33 +4,33 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="backgroundLog">
-  <ion-card>
-    <div class="logo-container">
-      <img src="../../assets/backLog.png" alt="logoVet" class="img-card">
-    </div>
-
-    <ion-card-content>
-      <form (ngSubmit)="loguedUser()" [formGroup]="form">
-        <ion-list>
-          <ion-item fill="solid">
-            <ion-label position="floating" >Email</ion-label>
-            <ion-input formControlName="email" type="email"  class="custom"></ion-input>
-            <ion-note slot="helper">Ingrese un correo valido</ion-note>
-            <ion-note slot="error">Invalid email</ion-note>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Contraseña</ion-label>
-            <ion-input formControlName="pass" type="password" value="password" class="custom" ></ion-input>
-          </ion-item>
-        </ion-list>
-      </form>
-      <div class="button-container">
-      <ion-button type="submit" (click)="loguedUser()" class="colorLogin Button" >
-        Ingresar
-      </ion-button>
-      <a href="#" [routerLink]="['/registro']" class="footLogin">Registrarse</a>
-    </div>
-    </ion-card-content>
-  </ion-card>
-
+  <div>
+    <ion-card>
+      <div class="img-card">
+        <img src="../../assets/backLog.png" alt="logoVet">
+      </div>
+      <ion-card-content>
+        <form (ngSubmit)="loguedUser()" [formGroup]="form">
+          <ion-list>
+            <ion-item fill="solid">
+              <ion-label position="floating">Email</ion-label>
+              <ion-input formControlName="email" type="email" class="custom"></ion-input>
+              <ion-note slot="helper">Ingrese un correo valido</ion-note>
+              <ion-note slot="error">Invalid email</ion-note>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Contraseña</ion-label>
+              <ion-input formControlName="pass" type="password" value="password" class="custom"></ion-input>
+            </ion-item>
+          </ion-list>
+        </form>
+        <ion-buttons class="button-container">
+          <ion-button type="submit" (click)="loguedUser()" class="colorLogin Button">
+            Ingresar
+          </ion-button>
+          <a href="#" [routerLink]="['/registro']" class="footLogin">Registrarse</a>
+        </ion-buttons>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

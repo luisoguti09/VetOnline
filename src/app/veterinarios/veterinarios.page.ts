@@ -36,8 +36,7 @@ export class VeterinariosPage implements OnInit {
   getVeterinarios() {
     this.vetServ.mostrarVets().subscribe(res =>{
       this.vets = res
-    });
-      
+    });         
   }
 
   searchVet(event: any) {

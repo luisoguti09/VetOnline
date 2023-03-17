@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { AlertController } from '@ionic/angular';
+import { AlertController, InfiniteScrollCustomEvent } from '@ionic/angular';
 import { LoginServiceService } from '../services/login-service.service';
-import { VeterinariosPageRoutingModule } from '../veterinarios/veterinarios-routing.module';
 import { VeterinariosServiceService } from '../services/veterinarios-service.service';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit {
 
   public form: FormGroup;
   public veterinarios: any;
+  public items: any = [];
 
   constructor(
     private logServ: LoginServiceService,
@@ -39,8 +40,17 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  shareApp(){
-    
+  private generateItems() {
+    const count = this.items.length + 1;
+    for (let i = 0; i < 50; i++) {
+      this.items.push(`Item ${count + i}`);
+    }
   }
 
+  cargandoInfo(ev: any) {
+    this.generateItems();
+    setTimeout(() => {
+      (ev as InfiniteScrollCustomEvent).target.complete();
+    }, 500);
+  }
 }
