@@ -23,12 +23,20 @@ $main-color: #920ba6;
     margin-top: 50px;
     margin-right: 100px;
     display: flex;
+    justify-content: center;
+    width: 110px;
+    margin: 0 auto;
 }
 
 .button{
     width: 250px;
     height: 40px;
     color: #fff;
+}
+.logo-container{
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 .button-container{
@@ -38,7 +46,7 @@ $main-color: #920ba6;
     margin: 20px 0;
     color: #fff;
     border-radius: 20px;
-
+    flex-direction: column;
 }
 
 .img-card{
@@ -62,7 +70,7 @@ ion-toolbar {
     margin-top: 100px;
   }
   ion-input.custom {
-    
+
     --color:#000 ;
     --placeholder-color: #ddd;
     --placeholder-opacity: .8;
@@ -72,8 +80,8 @@ ion-toolbar {
     --padding-start: 10px;
     display: block;
     width: 100%;
-    border-radius: 0.5rem;  
-    border: none;  
+    border-radius: 0.5rem;
+    border: none;
   }
 
   ion-card-title.colorCus{
