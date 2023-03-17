@@ -37,9 +37,12 @@ ion-card {
   }
   ion-select {
     background: rgb(255, 247, 247);
-    --placeholder-color: rgb(255, 247, 247);
     --placeholder-opacity: 8;
-    --color: #fff
+    --color: #141414 !important;
     width: 100%;
     justify-content: center;
+  }
+  .selectT{
+    color: #141414;
+
   }

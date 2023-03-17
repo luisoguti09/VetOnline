@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginServiceService {
-  url = 'http://vetonline.cu.ma';
+  url = 'https://vetonline.cu.ma';
   httpOptions: any;
    
   constructor(

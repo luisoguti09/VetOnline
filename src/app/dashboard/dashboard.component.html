@@ -1,5 +1,5 @@
 <ion-app>
-  <ion-content class="backgroundDashs">
+  <ion-content class="backgroundDashs no-scroll">
     <ion-split-pane contentId="main-content">
       <ion-menu contentId="main-content" type="overlay">
         <ion-list id="inbox-list">
@@ -23,12 +23,14 @@
             <img src="../../assets/veterinarios-avatar/veterinaria4.jpg" alt="">
           </ion-avatar>
           <ion-label>{{vet.nombre}} {{vet.apellido}} </ion-label>
-          
           <ion-avatar slot="end">
             <ion-icon size="large" name="phone-portrait-outline"></ion-icon>
           </ion-avatar>
         </ion-item>
       </div>
     </ion-list>
+    <ion-infinite-scroll (ionInfinite)="cargandoInfo($event)">
+      <ion-infinite-scroll-content loadingText="Cargando..." loadingSpinner="bubbles"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
   </ion-content>
 </ion-app>
