@@ -14,21 +14,11 @@
           </ion-menu-toggle>
         </ion-list>
       </ion-menu>
-      <ion-router-outlet id="main-content"></ion-router-outlet>
+      <ion-router-outlet id="main-content">
+        <app-veterinarios></app-veterinarios>
+      </ion-router-outlet>
     </ion-split-pane>
-    <ion-list>
-      <div>
-        <ion-item *ngFor="let vet of veterinarios" class="listaVets">
-          <ion-avatar slot="start">
-            <img src="../../assets/veterinarios-avatar/veterinaria4.jpg" alt="">
-          </ion-avatar>
-          <ion-label>{{vet.nombre}} {{vet.apellido}} </ion-label>
-          <ion-avatar slot="end">
-            <ion-icon size="large" name="phone-portrait-outline"></ion-icon>
-          </ion-avatar>
-        </ion-item>
-      </div>
-    </ion-list>
+    
     <ion-infinite-scroll (ionInfinite)="cargandoInfo($event)">
       <ion-infinite-scroll-content loadingText="Cargando..." loadingSpinner="bubbles"></ion-infinite-scroll-content>
     </ion-infinite-scroll>

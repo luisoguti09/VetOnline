@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { VeterinariosPage } from './veterinarios/veterinarios.page';
 
 
 
@@ -26,10 +27,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     provide: 
     RouteReuseStrategy, 
     useClass: IonicRouteStrategy,
-
-    
   },
     ],
+    
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -63,6 +63,10 @@ export class VeterinariosPage implements OnInit {
     }, 500);
   }
 
+  comenzarComunicacion(){
+    
+  }
+
 
 }
 
