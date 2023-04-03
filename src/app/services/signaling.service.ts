@@ -1,30 +1,30 @@
 import { Injectable } from '@angular/core';
 import { SignalData } from 'simple-peer';
-import io from 'socket.io-client';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class SignalingService {
 
-  private socket: SocketIOClient.Socket
 
-  get socketId() {
-    return this.socket.id
-  }
+
+  //get socketId() {
+   
+  //}
 
   constructor() { }
 
   connect() {
-    this.socket = io.connect('http://localhost:3000')
+    
   }
 
   private listen(channel: string, fn: Function) {
-    this.socket.on(channel, fn)
+    
   }
 
   private send(chanel: string, message: SignalMessage) {
-    this.socket.emit(chanel, message)
+    
   }
 
   onConnect(fn: () => void) {

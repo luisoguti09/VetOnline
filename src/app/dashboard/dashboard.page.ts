@@ -21,8 +21,7 @@ export class DashboardPage implements OnInit {
     private vetServ: VeterinariosServiceService
   ) { 
     this.form = this.fb.group({
-      fomrs: new FormControl('', [Validators.required]),
-      
+      fomrs: new FormControl('', [Validators.required]), 
     })
   }
 

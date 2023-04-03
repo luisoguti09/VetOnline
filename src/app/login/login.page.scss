@@ -1,8 +1,8 @@
-$main-color: #920ba6;
+$main-color: #F2B1DB;
 
 /*boton ingresar*/
 .colorLogin{
-    background-color: #00e7d0;
+    background-color:#9A93BD;
     color: #ddd;
     border-radius: 20px;
     text-shadow: #000;
@@ -10,11 +10,10 @@ $main-color: #920ba6;
 }
 /*link registrar*/
 .footLogin{
-    color: #00e7d0;
     text-align: center;
     font-size: 20px;
     text-decoration: none;
-    color: #00e7d0;
+    color: #9A93BD;
 }
 
 .button{
@@ -50,18 +49,19 @@ ion-buttons.button-container{
 }
 
 ion-toolbar {
-    --background: #920ba6;
-    --color: white;
+    --background: #F2B1DB;
+    --color: #9A93BD;
   }
   /*Card*/
   ion-card {
-    --background: #920ba6;
-    --color: #9efff0;
+    --background:#F2B1DB;
+    --color: #4fcebb;
     border-radius: 20px;
     margin-top: 100px;
   }
   /*Input*/
   ion-input.custom {
+    background: rgb(255, 247, 247);
     
     --color:#000 ;
     --placeholder-color: #ddd;
@@ -81,7 +81,7 @@ ion-toolbar {
     --color:white;
   }
   ion-card-header{
-    --background: #920ba6;
+    --background:#F2B1DB;
     --color: white;
   }
 

@@ -1,4 +1,6 @@
-import SimplePeer from 'simple-peer';
+import * as SimplePeer from "simple-peer"
+
+
 export interface Chat {
     msg: string,
     to: string,

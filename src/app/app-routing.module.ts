@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+  {
+    path: 'videocall',
+    loadChildren: () => import('./videocall/videocall.module').then( m => m.VideocallPageModule)
   }
 ];
 
