@@ -7,13 +7,17 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogModule } from 'primeng/dialog';
+import { MessagesModule } from 'primeng/messages';
+import { ToastModule } from 'primeng/toast';
+
 
 
 
 @NgModule({
-  declarations: [AppComponent,DashboardComponent,],
+  declarations: [AppComponent],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
@@ -21,15 +25,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MessagesModule,
+    DialogModule,
+    ToastModule
   ],
   providers: [{ 
     provide: 
     RouteReuseStrategy, 
     useClass: IonicRouteStrategy,
-
-    
   },
     ],
+    
   bootstrap: [AppComponent],
+  exports:[
+    MessagesModule,
+    DialogModule,
+    ToastModule
+  ]
 })
 export class AppModule {}

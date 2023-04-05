@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
+import { MessagesModule } from 'primeng/messages';
+import { DialogModule } from 'primeng/dialog';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   imports: [
@@ -14,8 +17,13 @@ import { LoginPage } from './login.page';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    LoginPageRoutingModule
+    LoginPageRoutingModule,
+    DialogModule,
+    MessagesModule,
+    ToastModule
+    
   ],
-  declarations: [LoginPage]
+  declarations: [LoginPage],
+  exports:[  ]
 })
 export class LoginPageModule {}

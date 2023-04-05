@@ -1,5 +1,5 @@
-ion-content.backgroundDashs{
-    --background: url(../../assets/logoVetOnline.jpeg);
+ion-content.backgroundDash{
+    --background: url(../../assets/backLog.png);
     position: absolute;
     display: flex;
     left: 0;
@@ -14,7 +14,10 @@ ion-content.backgroundDashs{
     display: flex;
     flex-direction: row;
     text-align: center;
-    position: relative;
+    
     z-index: 20;
 
+}
+.sideMenu{
+    background-color: #FCEFF7;
 }

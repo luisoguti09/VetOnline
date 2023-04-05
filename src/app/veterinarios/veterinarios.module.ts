@@ -15,6 +15,10 @@ import { VeterinariosPage } from './veterinarios.page';
     IonicModule,
     VeterinariosPageRoutingModule
   ],
-  declarations: [VeterinariosPage]
+  declarations: [
+    VeterinariosPage],
+  exports:[
+    VeterinariosPage
+  ]
 })
 export class VeterinariosPageModule {}

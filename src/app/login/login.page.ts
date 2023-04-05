@@ -3,10 +3,13 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { stringify } from 'querystring';
 import { LoginServiceService } from '../services/login-service.service';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
+  providers:[MessageService]
 
 })
 export class LoginPage implements OnInit {
@@ -16,14 +19,17 @@ export class LoginPage implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email]),
     pass: new FormControl('', [Validators.required]),
   });
+  error: any;
+  visible: boolean = false;
 
   constructor(
     private logServ: LoginServiceService,
     private fb: FormBuilder,
-    private router : Router
+    private router : Router,
+    private messageService: MessageService,
   ) { }
   ngOnInit() { }
-
+  
   loguedUser() {
     console.log(this.form?.get('email')?.value);
     
@@ -34,8 +40,15 @@ export class LoginPage implements OnInit {
         if (res.success  ) {
          this.router.navigate(['dashboard']);
         } else {
-          console.log("te equivocaste perrito");
-      }
+          this.error="e";
+          this.visible = true;
+          this.showError();
+        }
     });
   }
+
+  showError() {
+    this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Complete todos los campos' });
+  }
+
 }

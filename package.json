@@ -13,6 +13,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "^15.0.0",
     "@angular/common": "^15.0.0",
     "@angular/core": "^15.0.0",
     "@angular/forms": "^15.0.0",
@@ -29,7 +30,12 @@
     "@ionic/angular": "^6.1.9",
     "cordova-plugin-advanced-http": "^3.3.1",
     "ionicons": "^6.0.3",
+    "mercadopago": "^1.5.15",
+    "primeicons": "^6.0.1",
+    "primeng": "^15.3.0",
     "rxjs": "~7.5.0",
+    "simple-peer": "^9.11.1",
+    "socket.io": "^4.6.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
@@ -47,6 +53,7 @@
     "@ionic/angular-toolkit": "^6.0.0",
     "@types/jasmine": "~4.0.0",
     "@types/node": "^12.11.1",
+    "@types/simple-peer": "^9.11.5",
     "@typescript-eslint/eslint-plugin": "5.3.0",
     "@typescript-eslint/parser": "5.3.0",
     "eslint": "^7.6.0",
@@ -64,5 +71,9 @@
     "ts-node": "~8.3.0",
     "typescript": "~4.8.4"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "optionalDependencies": {
+    "bufferutil": "^4.0.7",
+    "utf-8-validate": "^5.0.10"
+  }
 }

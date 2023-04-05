@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { AlertController, InfiniteScrollCustomEvent } from '@ionic/angular';
+import { InfiniteScrollCustomEvent } from '@ionic/angular';
 import { LoginServiceService } from '../services/login-service.service';
 import { VeterinariosServiceService } from '../services/veterinarios-service.service';
 
-
 @Component({
   selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'],
+  templateUrl: './dashboard.page.html',
+  styleUrls: ['./dashboard.page.scss'],
 })
-export class DashboardComponent implements OnInit {
+export class DashboardPage implements OnInit {
 
   public form: FormGroup;
   public veterinarios: any;
@@ -22,8 +21,7 @@ export class DashboardComponent implements OnInit {
     private vetServ: VeterinariosServiceService
   ) { 
     this.form = this.fb.group({
-      fomrs: new FormControl('', [Validators.required]),
-      
+      fomrs: new FormControl('', [Validators.required]), 
     })
   }
 

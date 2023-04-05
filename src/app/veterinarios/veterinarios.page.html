@@ -1,31 +1,25 @@
 <ion-header>
   <ion-toolbar >
     <ion-title>Veterinarios</ion-title>
-    <ion-searchbar placeholder="Buscar" animated (ionChange)=" searchVet($event)"></ion-searchbar>
+    <ion-searchbar placeholder="Buscar" animated (ionChange)=" searchVet($event)" class="buscador"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
-<ion-content color="my-color">
+<ion-content class="backgroundVet">
   <ion-list>
-    <ion-list-header> On Line </ion-list-header>
-    <ion-item *ngFor="let vet of vets">
-      <ion-avatar slot="start">
-        <img src="../../assets/veterinarios-avatar/{{vet.avatar}}" />
-      </ion-avatar>
-      <ion-icon name="logo-whatsapp" size="md" slot="end"></ion-icon>
-      <ion-icon name="call" size="md" slot="end"></ion-icon>
-      <ion-icon name="mail" size="md" slot="end"></ion-icon>
-      <ion-icon name="location" size="md" slot="end"></ion-icon>
-      <ion-label>
-        <h2>{{vet.name}}</h2>
-        <h3>{{vet.description}}</h3>
-        <p>{{vet.status}}</p>
-        <h4>{{vet.telefono}}</h4>
-        <h5>Licencia n° {{vet.licencia}}</h5>
-        <h6>email: {{vet.email}}</h6>
-      </ion-label>
-    </ion-item>
-    </ion-list>
+    <div>
+      <ion-item *ngFor="let vet of vets" class="listaVets">
+        <ion-avatar slot="start">
+          <img src="../../assets/veterinarios-avatar/veterinaria4.jpg" alt="">
+        </ion-avatar>
+        <ion-label>{{vet.nombre}} {{vet.apellido}} </ion-label>
+        <ion-avatar slot="end">
+          <ion-icon size="large" name="phone-portrait-outline" (click)="comenzarComunicacion()"></ion-icon>
+        </ion-avatar>
+      </ion-item>
+    </div>
+  </ion-list>
     <ion-infinite-scroll (ionInfinite)="cargandoInfo($event)">
       <ion-infinite-scroll-content loadingText="Cargando..." loadingSpinner="bubbles"></ion-infinite-scroll-content>
     </ion-infinite-scroll>
+    
 </ion-content>

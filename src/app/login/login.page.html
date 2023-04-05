@@ -3,7 +3,8 @@
     <ion-title>Vet Online</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content class="backgroundLog">
+<ion-content class="backgroundLog" >
+  <p-toast ></p-toast>
   <div>
     <ion-card>
       <div class="img-card">
@@ -25,7 +26,7 @@
           </ion-list>
         </form>
         <ion-buttons class="button-container">
-          <ion-button type="submit" (click)="loguedUser()" class="colorLogin Button">
+          <ion-button type="submit" (click)="loguedUser()" class="colorLogin Button" >
             Ingresar
           </ion-button>
           <a href="#" [routerLink]="['/registro']" class="footLogin">Registrarse</a>
@@ -33,4 +34,6 @@
       </ion-card-content>
     </ion-card>
   </div>
+
+
 </ion-content>
