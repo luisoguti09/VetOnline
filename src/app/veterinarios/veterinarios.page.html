@@ -1,10 +1,10 @@
 <ion-header>
   <ion-toolbar >
     <ion-title>Veterinarios</ion-title>
-    <ion-searchbar placeholder="Buscar" animated (ionChange)=" searchVet($event)"></ion-searchbar>
+    <ion-searchbar placeholder="Buscar" animated (ionChange)=" searchVet($event)" class="buscador"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
-<ion-content color="my-color">
+<ion-content class="backgroundVet">
   <ion-list>
     <div>
       <ion-item *ngFor="let vet of vets" class="listaVets">

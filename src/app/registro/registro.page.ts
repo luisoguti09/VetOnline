@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 import { LoginServiceService } from '../services/login-service.service';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.page.html',
   styleUrls: ['./registro.page.scss'],
+  
 })
 export class RegistroPage implements OnInit {
 
@@ -29,6 +32,8 @@ export class RegistroPage implements OnInit {
     });
     
   }
+
+
 
   ngOnInit() {
     this.logServ.tipoUser().subscribe(res =>{

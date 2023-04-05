@@ -13,6 +13,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "^15.0.0",
     "@angular/common": "^15.0.0",
     "@angular/core": "^15.0.0",
     "@angular/forms": "^15.0.0",
@@ -30,6 +31,8 @@
     "cordova-plugin-advanced-http": "^3.3.1",
     "ionicons": "^6.0.3",
     "mercadopago": "^1.5.15",
+    "primeicons": "^6.0.1",
+    "primeng": "^15.3.0",
     "rxjs": "~7.5.0",
     "simple-peer": "^9.11.1",
     "socket.io": "^4.6.1",

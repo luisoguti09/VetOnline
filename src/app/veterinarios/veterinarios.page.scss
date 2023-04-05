@@ -1,7 +1,18 @@
 ion-toolbar {
-    --background: #00e7d0;
+    --background: #9A93BD;
     --color: white;
   }
+
+  .listaVets{
+    font-style: bold;
+    text-align: center;
+  }
+ 
+  ion-content.backgroundVet{
+    --background: url(../../assets/backLog.png) no-repeat;
+    position: fixed;
+    display: flex;
+}
 
   .room-members {
     overflow-x: auto;

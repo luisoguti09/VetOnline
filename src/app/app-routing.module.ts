@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'videocall',
     loadChildren: () => import('./videocall/videocall.module').then( m => m.VideocallPageModule)
+  },
+  {
+    path: 'payment',
+    loadChildren: () => import('./payment/payment.module').then( m => m.PaymentPageModule)
   }
 ];
 

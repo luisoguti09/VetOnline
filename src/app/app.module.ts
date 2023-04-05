@@ -8,7 +8,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { VeterinariosPage } from './veterinarios/veterinarios.page';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogModule } from 'primeng/dialog';
+import { MessagesModule } from 'primeng/messages';
+import { ToastModule } from 'primeng/toast';
+
 
 
 
@@ -21,6 +25,10 @@ import { VeterinariosPage } from './veterinarios/veterinarios.page';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MessagesModule,
+    DialogModule,
+    ToastModule
   ],
   providers: [{ 
     provide: 
@@ -30,5 +38,10 @@ import { VeterinariosPage } from './veterinarios/veterinarios.page';
     ],
     
   bootstrap: [AppComponent],
+  exports:[
+    MessagesModule,
+    DialogModule,
+    ToastModule
+  ]
 })
 export class AppModule {}

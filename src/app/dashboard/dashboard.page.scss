@@ -1,5 +1,5 @@
 ion-content.backgroundDash{
-    --background: url(../../assets/BackgroundLogin.jpeg);
+    --background: url(../../assets/backLog.png);
     position: absolute;
     display: flex;
     left: 0;
@@ -17,4 +17,7 @@ ion-content.backgroundDash{
     
     z-index: 20;
 
+}
+.sideMenu{
+    background-color: #FCEFF7;
 }
