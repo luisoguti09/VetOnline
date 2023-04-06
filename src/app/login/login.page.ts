@@ -18,9 +18,11 @@ export class LoginPage implements OnInit {
     fomrs: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
     pass: new FormControl('', [Validators.required]),
+    
   });
   error: any;
   visible: boolean = false;
+  eresVet: boolean= false;
 
   constructor(
     private logServ: LoginServiceService,
@@ -37,12 +39,15 @@ export class LoginPage implements OnInit {
       this.form?.get('email')?.value , 
       this.form?.get('pass')?.value)
       .subscribe(res =>{
-        if (res.success  ) {
+        if (res.success && this.eresVet == false ) {
          this.router.navigate(['dashboard']);
         } else {
           this.error="e";
           this.visible = true;
           this.showError();
+        }
+        if (res.success && this.eresVet) {
+          this.router.navigate(['dashboard-veterinarios'])
         }
     });
   }

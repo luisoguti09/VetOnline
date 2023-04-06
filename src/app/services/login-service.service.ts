@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class LoginServiceService {
   url = 'https://vetonline.cu.ma';
   httpOptions: any;
+  tipoUsers: boolean = false;
    
   constructor(
     private httpClient: HttpClient
@@ -21,7 +22,7 @@ export class LoginServiceService {
   }
 
   loginSucc(usuario: any, pass: any) : Observable<any> {
-
+    
     return this.httpClient.get(`${this.url}/login.php?usuario=${usuario}&password=${pass}`);
   }
   guardar(nombre: string, apellido: string, email: string, pass: string, tipoUsuario: string ){
@@ -36,6 +37,15 @@ export class LoginServiceService {
 
   tipoUser(){
    return this.httpClient.get(`${this.url}/tipoUsuario.php`)
+   
+  }
+
+  reDirecTo(){
+    if (this.tipoUser() ) {
+      
+    } else {
+      
+    }
   }
 
 }
