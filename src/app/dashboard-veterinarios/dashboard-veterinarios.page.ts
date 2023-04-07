@@ -21,13 +21,13 @@ export class DashboardVeterinariosPage implements OnInit {
       {
           icon: 'pi pi-check',
           command: () => {
-              this.messageService.add({ severity: 'info', summary: 'Act', detail: 'Activado!' });
+              this.messageService.add({ severity: 'info', summary: 'Activado', detail: 'Listo para recibir llamadas!' });
           }
       },
       {
           icon: 'pi pi-times',
           command: () => {
-              this.messageService.add({ severity: 'success', summary: 'Desact', detail: 'Desactivado!' });
+              this.messageService.add({ severity: 'success', summary: 'Desactivado', detail: 'Es hora de descansar!' });
           }
       }
     ]
