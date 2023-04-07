@@ -27,8 +27,8 @@ export class DashboardPage implements OnInit {
 
   public appPages = [
     { title: 'Veterinarios', url: '/veterinarios', icon: 'medkit' },
-    { title: 'Login', url: '/login', icon: 'log-in' },
     { title: 'Usuarios', url: '/usuarios', icon: 'people' },
+    { title: 'Logout', url: '/logout', icon: 'log-out' },
   ];
   public labels = ['Consejos', 'Tinder de Mascotas', 'Notas', 'Tabla de Alimentacion', 'Querés viajar?', 'Recordatorios'];
 
