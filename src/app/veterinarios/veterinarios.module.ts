@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { VeterinariosPageRoutingModule } from './veterinarios-routing.module';
 
 import { VeterinariosPage } from './veterinarios.page';
+import { CallPageModule } from '../call/call.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    VeterinariosPageRoutingModule
+    VeterinariosPageRoutingModule,
+    CallPageModule
   ],
   declarations: [
     VeterinariosPage],

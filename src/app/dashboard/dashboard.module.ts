@@ -8,6 +8,7 @@ import { DashboardPageRoutingModule } from './dashboard-routing.module';
 
 import { DashboardPage } from './dashboard.page';
 import { VeterinariosPageModule } from '../veterinarios/veterinarios.module';
+import { CallPageModule } from '../call/call.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { VeterinariosPageModule } from '../veterinarios/veterinarios.module';
     FormsModule,
     IonicModule,
     DashboardPageRoutingModule,
-    VeterinariosPageModule
+    VeterinariosPageModule,
+    CallPageModule
   ],
   declarations: [DashboardPage]
 })

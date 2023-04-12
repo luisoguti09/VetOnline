@@ -12,15 +12,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogModule } from 'primeng/dialog';
 import { MessagesModule } from 'primeng/messages';
 import { ToastModule } from 'primeng/toast';
-
+import { NgxAgoraSdkNgModule } from 'ngx-agora-sdk-ng';
 
 
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule, 
-    IonicModule.forRoot(), 
+    BrowserModule,
+    IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
@@ -28,15 +28,19 @@ import { ToastModule } from 'primeng/toast';
     BrowserAnimationsModule,
     MessagesModule,
     DialogModule,
-    ToastModule
+    ToastModule,
+    NgxAgoraSdkNgModule.forRoot({
+      AppID: '3df3f408592a4f249c65c9134fa181b3',
+      Video: { codec: 'h264', mode: 'rtc', role: 'host' }
+    })
   ],
-  providers: [{ 
-    provide: 
-    RouteReuseStrategy, 
+  providers: [{
+    provide:
+    RouteReuseStrategy,
     useClass: IonicRouteStrategy,
   },
     ],
-    
+
   bootstrap: [AppComponent],
   exports:[
     MessagesModule,

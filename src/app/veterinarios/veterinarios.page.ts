@@ -13,19 +13,19 @@ import * as SimplePeer from 'simple-peer';
   styleUrls: ['./veterinarios.page.scss'],
 })
 export class VeterinariosPage implements OnInit {
-  
+
   veterinarios: any = [];
   vets: any = [];
   searchedvets: any;
   items: any = [];
-  
+  showCall = false;
   constructor(
     private vetServ: VeterinariosServiceService,
-    
+
   ) { }
 
   ngOnInit() {
-    
+
     this.getVeterinarios();
 
     this.searchedvets = this.vets;
@@ -66,7 +66,7 @@ searchVet(event: any) {
 }
 
   comenzarComunicacion(){
-
+    this.showCall = true;
 }
 
 }
