@@ -39,8 +39,11 @@ const routes: Routes = [
     path: 'call',
     loadChildren: () => import('./call/call.module').then( m => m.CallPageModule)
   },
+{
 
-
+    path: 'dashboard-veterinarios',
+    loadChildren: () => import('./dashboard-veterinarios/dashboard-veterinarios.module').then( m => m.DashboardVeterinariosPageModule)
+  }
 ];
 
 @NgModule({
