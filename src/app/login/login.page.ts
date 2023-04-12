@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { stringify } from 'querystring';
 import { LoginServiceService } from '../services/login-service.service';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
@@ -45,7 +44,7 @@ export class LoginPage implements OnInit {
           this.error="e";
           this.visible = true;
           this.showError();
-        }
+        } 
         if (res.success && this.eresVet) {
           this.router.navigate(['dashboard-veterinarios'])
         }

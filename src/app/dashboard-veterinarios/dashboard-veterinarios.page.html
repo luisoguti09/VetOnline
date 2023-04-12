@@ -5,10 +5,14 @@
 </ion-header>
 
 <ion-content>    
-  <div class="card">
-   <div style="height: 500px; position: relative;" class="speeddial-linear-demo">
-       <p-toast></p-toast>
-       <p-speedDial [model]="items" direction="right"></p-speedDial>
-   </div>
-  </div>
+  <div class="card flex justify-content-center">
+    <form [formGroup]="formGroup">
+       <p-toast [breakpoints]="{'920px': {width: '100%', right: '0', left: '0'}}"></p-toast>
+      <p-slider formControlName="status"></p-slider>
+      <button type="button" pButton pRipple (click)="showOn()" label="Activarse" class="p-button-success"></button>
+      <button type="button" pButton pRipple (click)="showOff()" label="Descativarse" class="p-button-danger"></button>
+      
+  </form>
+</div>
+
 </ion-content>

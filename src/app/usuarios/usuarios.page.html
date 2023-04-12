@@ -5,10 +5,50 @@
 </ion-header>
 
 <ion-content>
+
   <ion-fab>
     <ion-fab-button bottom left color="lil-color">
       <ion-icon name="Agregar Mascota"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+  <ion-buttons>
+    <input type="button" value="Agregar Tarjeta" class="addCard">
+  <ion-icon name="journal-outline"></ion-icon>
+</ion-buttons>
+<ion-card class="cardMascota">
+  <ion-card-header>
+    <ion-card-title>Mis Mascotas</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+        <ion-label>Gato Raul</ion-label>
+      </ion-item>
 
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+        <ion-label>Thor</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+        <ion-label>Ruperto</ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-thumbnail slot="start">
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+        <ion-label>Gipsy</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
 </ion-content>

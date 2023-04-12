@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MenuItem, MessageService } from 'primeng/api';
 
 
@@ -10,27 +11,45 @@ import { MenuItem, MessageService } from 'primeng/api';
 })
 export class DashboardVeterinariosPage implements OnInit {
 
-  items: MenuItem[] = [];
+  public items: MenuItem[] = [];
+  public formGroup!: FormGroup;
+  public visible: boolean = false;
 
   constructor(
     private messageService: MessageService,
-  ) { }
+    private fb: FormBuilder,
+  ) {
+    this.formGroup = fb.group({
+      status:[null]
+    })
+  }
+
+  stateOptions: any[] = [
+    { label: 'Off', value: 'off' },
+    { label: 'On', value: 'on' }
+  ];
 
   ngOnInit() {
-    this.items = [
-      {
-          icon: 'pi pi-check',
-          command: () => {
-              this.messageService.add({ severity: 'info', summary: 'Activado', detail: 'Listo para recibir llamadas!' });
-          }
-      },
-      {
-          icon: 'pi pi-times',
-          command: () => {
-              this.messageService.add({ severity: 'success', summary: 'Desactivado', detail: 'Es hora de descansar!' });
-          }
-      }
-    ]
+    this.formGroup = new FormGroup({
+      value: new FormControl('on')
+    });
   }
+
+  showMessages(){
+    if (this.formGroup.get('status')?.value == 'on') {
+      this.showOn();
+    } else {
+      this.showOff();
+    }
+  }
+
+  showOff() {
+    this.messageService.add({ severity: 'off', summary: 'Off', detail: 'Desconectado' });
+  }
+  showOn() {
+    this.messageService.add({ severity: 'on', summary: 'On', detail: 'Conectado y listo para recibir llamadas' });
+  }
+
+
 
 }
