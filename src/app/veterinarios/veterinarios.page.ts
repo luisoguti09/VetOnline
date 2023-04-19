@@ -68,6 +68,7 @@ searchVet(event: any) {
   comenzarComunicacion(){
     this.showCall = true;
 }
-
+canDismiss(){}
+presentingElement(){}
 }
 

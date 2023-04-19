@@ -3,6 +3,32 @@ ion-toolbar {
     --color: #fff;
   }
 
+  .card{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    padding: auto;
+  }
+
 .speeddial-linear-demo{
     background-color:#F2B1DB ;
+}
+
+.modalClass{
+  background: #9A93BD ;
+}
+ion-button {
+  --background: #F2B1DB !important;
+}
+
+ion-modal{
+  --height: 300px;
+  --background: #F2B1DB;
+  --color: #9A93BD;
+}
+
+.callClass{
+  height: 200px;
 }

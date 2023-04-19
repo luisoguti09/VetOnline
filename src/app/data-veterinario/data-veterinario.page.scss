@@ -1,0 +1,29 @@
+ion-modal{
+    --height: 300px;
+    --background: #F2B1DB;
+    --color: #9A93BD;
+}
+
+ion-toolbar {
+    margin-bottom: 30px;
+    --background: #9A93BD;
+    --color: #fff;
+  }
+
+.modal{
+    margin-top: 110px;
+    padding-top: 30px;
+}
+
+.callClass{
+    height: 200px;
+}
+
+.modalColor{
+    background-color: #9A93BD;
+    margin-top: 20px;
+}
+
+ion-button.modalColor{
+    background-color:#F2B1DB ;
+}

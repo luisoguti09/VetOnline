@@ -11,14 +11,54 @@
         <ion-avatar slot="start">
           <img src="../../assets/veterinarios-avatar/veterinaria4.jpg" alt="">
         </ion-avatar>
-        <ion-label>{{vet.nombre}} {{vet.apellido}} </ion-label>
+        <ion-label>{{vet.nombre}} {{vet.apellido}} {{vet.id}} </ion-label>
         <ion-avatar slot="end">
-          <ion-icon size="large" name="phone-portrait-outline" (click)="comenzarComunicacion()"></ion-icon>
+          <ion-icon size="large" name="phone-portrait-outline"  expand="block" id="open-modal" 
+           href="#" [routerLink]="['/data-veterinario']" class="telefono"></ion-icon>
         </ion-avatar>
       </ion-item>
     </div>
   </ion-list>
-  <app-call *ngIf="showCall"></app-call>
+  <!--ion-button id="open-modal" expand="block">Open</ion-button>
+  <p>jhgjh</p>
+  <ion-modal trigger="open-modal">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button >Cancel</ion-button>
+          </ion-buttons>
+          <ion-title>Welcome</ion-title>
+          <ion-buttons slot="end">
+            <ion-button [strong]="true">Confirm</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item>
+          <ion-label position="stacked">Enter your name</ion-label>
+          <ion-input type="text" placeholder="Your name" ></ion-input>
+        </ion-item>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  <ion-modal #modal trigger="open-modal" [canDismiss]="canDismiss" [presentingElement]="presentingElement"
+  expand="block">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>LL</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="modal.dismiss()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <app-call></app-call>
+        </ion-content>
+      </ng-template>
+    </ion-modal-->
+  
     <ion-infinite-scroll (ionInfinite)="cargandoInfo($event)">
       <ion-infinite-scroll-content loadingText="Cargando..." loadingSpinner="bubbles"></ion-infinite-scroll-content>
     </ion-infinite-scroll>

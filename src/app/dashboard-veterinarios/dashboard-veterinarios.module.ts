@@ -10,6 +10,9 @@ import { DashboardVeterinariosPage } from './dashboard-veterinarios.page';
 import { MessagesModule } from 'primeng/messages';
 import { ToastModule } from 'primeng/toast';
 import { SpeedDialModule } from 'primeng/speeddial';
+import { CallPage } from '../call/call.page';
+import { CallPageModule } from '../call/call.module';
+
 
 @NgModule({
   imports: [
@@ -20,7 +23,9 @@ import { SpeedDialModule } from 'primeng/speeddial';
     DashboardVeterinariosPageRoutingModule,
     MessagesModule,
     ToastModule,
-    SpeedDialModule
+    SpeedDialModule,
+    CallPageModule
+    
   ],
   declarations: [DashboardVeterinariosPage]
 })

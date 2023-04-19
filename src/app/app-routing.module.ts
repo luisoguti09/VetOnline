@@ -43,7 +43,11 @@ const routes: Routes = [
 
     path: 'dashboard-veterinarios',
     loadChildren: () => import('./dashboard-veterinarios/dashboard-veterinarios.module').then( m => m.DashboardVeterinariosPageModule)
+  },  {
+    path: 'data-veterinario',
+    loadChildren: () => import('./data-veterinario/data-veterinario.module').then( m => m.DataVeterinarioPageModule)
   }
+
 ];
 
 @NgModule({

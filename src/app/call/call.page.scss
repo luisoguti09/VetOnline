@@ -22,7 +22,6 @@ body{
   max-width: 100%;
   z-index: 1;
   display: block;
-
   position: absolute;
  color: white;
  margin: 0;
@@ -37,9 +36,12 @@ body{
   top: 70;
   margin-left: -150px;
   padding: 5px;
-  color: #000000;
-  background-color: #444444;
+  color: #fff;
+  background-color: #9A93BD;
   text-align: center;
+  position: relative;
+  top: 50px;
+  left: 110%;
 }
 
 #notification{
@@ -51,7 +53,7 @@ body{
   top: 47.33px;
   font-size: 18pt;
   width: 100%;
-  background-color: orange;
+  background-color: #9A93BD;
 }
 
 
@@ -70,7 +72,7 @@ button{
   height: 100%;
   width: 100%;
   left: 0;
-  background-color: lightgray;
+  background-color: #F2B1DB;
   position: absolute;
 }
 

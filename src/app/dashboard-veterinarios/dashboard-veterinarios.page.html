@@ -4,15 +4,40 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>    
-  <div class="card flex justify-content-center">
+<ion-content>   
+  <div class="card">
     <form [formGroup]="formGroup">
        <p-toast [breakpoints]="{'920px': {width: '100%', right: '0', left: '0'}}"></p-toast>
       <p-slider formControlName="status"></p-slider>
-      <button type="button" pButton pRipple (click)="showOn()" label="Activarse" class="p-button-success"></button>
-      <button type="button" pButton pRipple (click)="showOff()" label="Descativarse" class="p-button-danger"></button>
-      
+      <button type="button" pButton pRipple (click)="showOn()" label="Activarse para Video Llamadas" class="p-button-success"></button>
+      <button type="button" pButton pRipple (click)="showOn()" label="Activarse Llamadas" class="p-button-success"></button>
+      <button type="button" pButton pRipple (click)="showOff()" label="Descativarse" class="p-button-danger"></button>    
   </form>
+</div>
+<app-call *NgIf()></app-call>
+<div class="modalClass">
+  <ion-button id="open-modal" expand="block" class="modalClass1">Abrir</ion-button>
+  <p>{{ message }}</p>
+  <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancel</ion-button>
+          </ion-buttons>
+          <ion-title>Bienvenido a la Sala</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirm()" [strong]="true">Confirmar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item>
+          <app-call class="callClass"></app-call>
+        </ion-item>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </div>
 
 </ion-content>

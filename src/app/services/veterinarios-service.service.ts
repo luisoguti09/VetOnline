@@ -14,6 +14,10 @@ export class VeterinariosServiceService {
     return this.httpClient.get(`${this.url}/veterinarios.php`);
   }
 
+  choseenOne(id: any){
+    return this.httpClient.get(`${this.url}/login.php?id`);
+  }
+
   
   
 }
