@@ -1,0 +1,61 @@
+ion-content.backgroundDash {
+  --background: url(../../assets/backLog.png);
+  position: absolute;
+  display: flex;
+  left: 0;
+  top: 0;
+}
+
+.no-scroll .scroll-content {
+  overflow: hidden;
+}
+
+.listaVets {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  z-index: 20;
+}
+
+.sideMenu {
+  background-color: #FCEFF7;
+}
+
+ion-card.cardastico {
+  --background: #F2B1DB ;
+  height: 250px;
+  width: 280px;
+  margin-top: 200px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-top: 50px;
+  left: 0;
+  right: 0;
+  --background: #F2B1DB ;
+}
+
+ion-card.border-card-on {
+  border-radius: 10px;
+  --background: green;
+  height: 350px;
+  width: 350px;
+  margin-top: 200px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-top: 50px;
+  left: 0;
+  right: 0;
+}
+
+ion-card.border-card-off {
+  border-radius: 10px;
+  --background:red ;
+  height: 250px;
+  width: 280px;
+  margin-top: 200px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-top: 50px;
+  left: 0;
+  right: 0;
+}/*# sourceMappingURL=dashboard.page.css.map */

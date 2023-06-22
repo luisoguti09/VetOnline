@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginServiceService } from '../services/login-service.service';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -33,12 +33,13 @@ export class LoginPage implements OnInit {
   
   loguedUser() {
     console.log(this.form?.get('email')?.value);
-    
     this.logServ.loginSucc(
-      this.form?.get('email')?.value , 
+      this.form?.get('email')?.value, 
       this.form?.get('pass')?.value)
       .subscribe(res =>{
         if (res.success && this.eresVet == false ) {
+         
+          this.logServ.loggedUser = res.data;
          this.router.navigate(['dashboard']);
         } else {
           this.error="e";
@@ -47,6 +48,7 @@ export class LoginPage implements OnInit {
         } 
         if (res.success && this.eresVet) {
           this.router.navigate(['dashboard-veterinarios'])
+          
         }
     });
   }

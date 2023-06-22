@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 import { LoginServiceService } from '../services/login-service.service';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 
 @Component({

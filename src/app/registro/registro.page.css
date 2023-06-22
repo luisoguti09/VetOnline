@@ -1,0 +1,51 @@
+ion-content.backgroundLog {
+  --background: url(../../assets/LogoBack.jpeg);
+  margin-top: 20px;
+}
+
+.img-card {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.headerReg {
+  background-color: #C6D6FA;
+  --color: #fff;
+}
+
+ion-header.headerReg {
+  --background:#C6D6FA !important;
+  --color: #1a1919;
+}
+
+ion-toolbar {
+  --background-color:#C6D6FA !important;
+  --color: #050505;
+}
+
+ion-card {
+  --background:#C6D6FA;
+  --color: #9A93BD;
+  text-align: center;
+  border-radius: 20px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+ion-button.botonReg {
+  --background: #9A93BD;
+  margin-top: 20px;
+  text-align: center;
+}
+
+ion-select {
+  background: rgb(255, 247, 247);
+  --placeholder-opacity: 8;
+  --color: #141414 !important;
+  width: 100%;
+  justify-content: center;
+}
+
+.selectT {
+  color: #141414;
+}/*# sourceMappingURL=registro.page.css.map */

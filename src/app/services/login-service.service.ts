@@ -10,6 +10,8 @@ export class LoginServiceService {
   url = 'https://vetonline.cu.ma';
   httpOptions: any;
   tipoUsers: boolean = false;
+  status: boolean = false;
+  public loggedUser!: any;
    
   constructor(
     private httpClient: HttpClient
@@ -20,11 +22,16 @@ export class LoginServiceService {
       }),
     };
   }
-
-  loginSucc(usuario: any, pass: any) : Observable<any> {
-    
+  
+  loginSucc(usuario: any, pass: any) : Observable<any> { 
     return this.httpClient.get(`${this.url}/login.php?usuario=${usuario}&password=${pass}`);
   }
+
+  loginUser(vetAsoc:any) : Observable<any> { 
+    return this.httpClient.get(`${this.url}/login.php?vet-asoc-id=${vetAsoc}`);
+  }
+
+  
   guardar(nombre: string, apellido: string, email: string, pass: string, tipoUsuario: string ){
     return this.httpClient.post(`${this.url}/registro.php`,{
       nombre, 
@@ -37,14 +44,6 @@ export class LoginServiceService {
 
   tipoUser(){
    return this.httpClient.get(`${this.url}/tipoUsuario.php`)
-  }
-
-  reDirecTo(){
-    if (this.tipoUser() ) {
-      
-    } else {
-      
-    }
   }
 
 }

@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { IonModal } from '@ionic/angular';
 import { MenuItem, MessageService } from 'primeng/api';
 import { OverlayEventDetail } from '@ionic/core/components';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { VeterinariosServiceService } from '../services/veterinarios-service.service';
 
 
 @Component({
@@ -22,10 +23,12 @@ export class DashboardVeterinariosPage implements OnInit {
   public name!: string;
   public message: string = 'Esperando por una consulta';
   public id: string = '23'
+  public status: string = "off";
 
   constructor(
     private messageService: MessageService,
     private fb: FormBuilder,
+    private vetServ: VeterinariosServiceService,
   ) {
     this.formGroup = fb.group({
       status:[null]
@@ -51,6 +54,17 @@ export class DashboardVeterinariosPage implements OnInit {
     }
   }
 
+  changeStatus(estado: string, tipoConsulta: string){
+    this.vetServ.changeStatus(estado, tipoConsulta).subscribe((res: any) =>{
+      this.status = res.status;
+      if(this.status === "on") {
+        this.showOn();
+      }else{
+        this.showOff;
+      }
+    })
+    }
+
   showOff() {
     this.messageService.add({ severity: 'off', summary: 'A descansar', detail: 'Desconectado' });
   }
@@ -61,17 +75,6 @@ export class DashboardVeterinariosPage implements OnInit {
   iniciarLlamada() {
     this.unirse = true;
   }
-
-  notificacionPush(){
-
-  }
-
-  
-
-  
-
-
-  
 
   cancel() {
     this.modal.dismiss(null, 'cancelar');

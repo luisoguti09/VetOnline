@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgxAgoraSdkNgService } from 'ngx-agora-sdk-ng';
 import { Peer } from "peerjs";
 
 @Component({

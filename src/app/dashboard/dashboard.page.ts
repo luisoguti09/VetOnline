@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { InfiniteScrollCustomEvent } from '@ionic/angular';
 import { LoginServiceService } from '../services/login-service.service';
 import { VeterinariosServiceService } from '../services/veterinarios-service.service';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { UsuariosPage } from '../usuarios/usuarios.page';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,6 +15,8 @@ export class DashboardPage implements OnInit {
   public form: FormGroup;
   public veterinarios: any;
   public items: any = [];
+  public associated! : any;
+  public showVets: boolean = false;
 
   constructor(
     private logServ: LoginServiceService,
@@ -33,9 +36,7 @@ export class DashboardPage implements OnInit {
   public labels = ['Consejos', 'Tinder de Mascotas', 'Notas', 'Tabla de Alimentacion', 'Querés viajar?', 'Recordatorios'];
 
   ngOnInit() {
-    this.vetServ.mostrarVets().subscribe(res=>{
-      this.veterinarios = res;  
-    })
+   this.mostrarVets();
   }
 
   private generateItems() {
@@ -51,4 +52,30 @@ export class DashboardPage implements OnInit {
       (ev as InfiniteScrollCustomEvent).target.complete();
     }, 500);
   }
+
+showAsoc(){
+  let loggedUser: any = this.logServ.loggedUser;
+  
+if( !!loggedUser?.vetAsocId && loggedUser.vetAsocId != 0) {
+  if(!!this.veterinarios){
+    this.associated = this.veterinarios?.find((vet: any) => vet.id === loggedUser.vetAsocId);
+    console.log(this.associated);
+    console.log(this.associated?.status);
+  }
+  return true;
+}
+this.showVets = true
+return false;
+}
+
+mostrarVets(){
+  if (this.showVets) {
+    this.vetServ.mostrarVets().subscribe(res=>{
+      this.veterinarios = res;  
+      console.log(this.veterinarios);
+    })
+  } else {
+    this.showVets = false;
+  }
+}
 }

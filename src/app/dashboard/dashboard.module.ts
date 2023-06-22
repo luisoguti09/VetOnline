@@ -1,23 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { DashboardPageRoutingModule } from './dashboard-routing.module';
-
 import { DashboardPage } from './dashboard.page';
 import { VeterinariosPageModule } from '../veterinarios/veterinarios.module';
 import { CallPageModule } from '../call/call.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { VeterinariosPageRoutingModule } from '../veterinarios/veterinarios-routing.module';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule,
     DashboardPageRoutingModule,
-    VeterinariosPageModule,
-    CallPageModule
+    VeterinariosPageRoutingModule,
+    CallPageModule,
+    VeterinariosPageModule
   ],
   declarations: [DashboardPage]
 })
