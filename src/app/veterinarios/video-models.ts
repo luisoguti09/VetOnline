@@ -8,6 +8,7 @@ export interface Chat {
 }
 
 export interface MitronPeer {
+    
     peerId: string,
     peer: SimplePeer.Instance
 }
