@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { LoginServiceService } from '../services/login-service.service';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
@@ -8,6 +8,7 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
   selector: 'app-registro',
   templateUrl: './registro.page.html',
   styleUrls: ['./registro.page.scss'],
+  encapsulation: ViewEncapsulation.None
   
 })
 export class RegistroPage implements OnInit {

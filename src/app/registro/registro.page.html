@@ -1,10 +1,12 @@
 <ion-header class="headerReg">
-  <ion-toolbar>
+  <div class="toolbar-container">
+  <ion-toolbar >
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button color="dark" default-href="#" [routerLink]="['/login']"></ion-back-button>
     </ion-buttons>
-    <ion-title color="headerReg">Registrate facilmente</ion-title>
+    <ion-title >Registrate facilmente</ion-title>
   </ion-toolbar>
+</div>
 </ion-header>
 
 <ion-content class="backgroundLog">

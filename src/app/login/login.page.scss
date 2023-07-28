@@ -1,4 +1,10 @@
-$main-color: #F2B1DB;
+$main-color: #b1f2e9;
+
+/*header*/
+ion-header.header{
+padding: 0, 14px;
+display: flex ;
+}
 
 /*boton ingresar*/
 .colorLogin{
@@ -51,12 +57,12 @@ ion-buttons.button-container{
 }
 
 ion-toolbar {
-    --background: #F2B1DB;
+    --background: #b1f2e9;
     --color: #9A93BD;
   }
   /*Card*/
   ion-card {
-    --background:#F2B1DB;
+    --background:#b0fffb;
     --color: #4fcebb;
     border-radius: 20px;
     margin-top: 100px;
@@ -85,7 +91,7 @@ ion-toolbar {
     --color:white;
   }
   ion-card-header{
-    --background:#F2B1DB;
+    --background: #b1f2e9;
     --color: white;
   }
 
