@@ -15,7 +15,7 @@
         </ion-list>
       </ion-menu>
       <ion-router-outlet id="main-content">
-        <app-veterinarios></app-veterinarios>
+        <app-veterinarios  *ngIf="!showAsoc()"></app-veterinarios>
       </ion-router-outlet>
     </ion-split-pane>
     <ion-card *ngIf="showAsoc()" [ngClass]="{'border-card-on':  associated?.status ==='on'}">

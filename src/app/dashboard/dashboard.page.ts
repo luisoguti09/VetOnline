@@ -16,8 +16,7 @@ export class DashboardPage implements OnInit {
   public veterinarios: any;
   public items: any = [];
   public associated! : any;
-  public showVets: boolean = false;
-
+  
   constructor(
     private logServ: LoginServiceService,
     private fb: FormBuilder,
@@ -60,22 +59,18 @@ if( !!loggedUser?.vetAsocId && loggedUser.vetAsocId != 0) {
   if(!!this.veterinarios){
     this.associated = this.veterinarios?.find((vet: any) => vet.id === loggedUser.vetAsocId);
     console.log(this.associated);
-    console.log(this.associated?.status);
+   return this.associated?.status === 'on' ? true :  false;
   }
-  return true;
+  
 }
-this.showVets = true
 return false;
 }
 
 mostrarVets(){
-  if (this.showVets) {
     this.vetServ.mostrarVets().subscribe(res=>{
       this.veterinarios = res;  
       console.log(this.veterinarios);
     })
-  } else {
-    this.showVets = false;
-  }
+  
 }
 }
