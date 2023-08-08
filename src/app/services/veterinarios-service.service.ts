@@ -7,7 +7,6 @@ import { Injectable } from '@angular/core';
 export class VeterinariosServiceService {
 
   conect: string = "";
-  status: boolean = false;
   url = 'https://vetonline.cu.ma';
   httpOptions: any;
   
@@ -29,10 +28,12 @@ export class VeterinariosServiceService {
     return this.httpClient.get(`${this.url}/login.php?id`);
   }
 
-  changeStatus(status: string, tipoConsulta: string){
+  changeStatus(status: string, id: number){
+    
     return this.httpClient.put(`${this.url}/status.php`,{
-      status,
-      tipoConsulta
+      "status": status,
+      "id": id
+     
     },this.httpOptions);
   }
   

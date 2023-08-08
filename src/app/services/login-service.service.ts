@@ -30,7 +30,6 @@ export class LoginServiceService {
   loginUser(vetAsoc:any) : Observable<any> { 
     return this.httpClient.get(`${this.url}/login.php?vet-asoc-id=${vetAsoc}`);
   }
-
   
   guardar(nombre: string, apellido: string, email: string, pass: string, tipoUsuario: string ){
     return this.httpClient.post(`${this.url}/registro.php`,{
@@ -44,6 +43,10 @@ export class LoginServiceService {
 
   tipoUser(){
    return this.httpClient.get(`${this.url}/tipoUsuario.php`)
+  }
+
+  loginVet(tipoUser:any){
+    return this.httpClient.get(`${this.url}/login.php?tipoUser=${tipoUser}`);
   }
 
 }

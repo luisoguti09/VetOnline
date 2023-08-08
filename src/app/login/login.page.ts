@@ -21,8 +21,7 @@ export class LoginPage implements OnInit {
   });
   error: any;
   visible: boolean = false;
-  eresVet: boolean= false;
-
+  
   constructor(
     private logServ: LoginServiceService,
     private fb: FormBuilder,
@@ -37,16 +36,11 @@ export class LoginPage implements OnInit {
       this.form?.get('email')?.value, 
       this.form?.get('pass')?.value)
       .subscribe(res =>{
-        if (res.success && this.eresVet == false ) {
-         
-          this.logServ.loggedUser = res.data;
+        this.logServ.loggedUser = res.data;
+        if (res.success && res.data.tipoUsuario == 'usuario' ) {
          this.router.navigate(['dashboard']);
-        } else {
-          this.error="e";
-          this.visible = true;
-          this.showError();
         } 
-        if (res.success && this.eresVet) {
+        if (res.success && res.data.tipoUsuario == 'veterinario') {
           this.router.navigate(['dashboard-veterinarios'])
           
         }

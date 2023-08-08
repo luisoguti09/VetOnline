@@ -32,3 +32,16 @@ ion-modal{
 .callClass{
   height: 200px;
 }
+:host ::ng-deep {
+ .button-green{
+  .p-button{ 
+    color: #ffffff;
+    background-color: green;
+    border: 2px solid #fff;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    border-radius: 6px;
+  }
+ }
+}

@@ -55,8 +55,9 @@ export class DashboardPage implements OnInit {
 showAsoc(){
   let loggedUser: any = this.logServ.loggedUser;
   
+
 if( !!loggedUser?.vetAsocId && loggedUser.vetAsocId != 0) {
-  if(!!this.veterinarios){
+  if(!!this.veterinarios && this.veterinarios.length >0){
     this.associated = this.veterinarios?.find((vet: any) => vet.id === loggedUser.vetAsocId);
     console.log(this.associated);
    return this.associated?.status === 'on' ? true :  false;

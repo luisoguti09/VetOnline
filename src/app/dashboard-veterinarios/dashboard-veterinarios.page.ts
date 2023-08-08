@@ -4,6 +4,7 @@ import { MenuItem, MessageService } from 'primeng/api';
 import { OverlayEventDetail } from '@ionic/core/components';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { VeterinariosServiceService } from '../services/veterinarios-service.service';
+import { LoginServiceService } from '../services/login-service.service';
 
 
 @Component({
@@ -29,6 +30,7 @@ export class DashboardVeterinariosPage implements OnInit {
     private messageService: MessageService,
     private fb: FormBuilder,
     private vetServ: VeterinariosServiceService,
+    private logServ: LoginServiceService,
   ) {
     this.formGroup = fb.group({
       status:[null]
@@ -54,8 +56,9 @@ export class DashboardVeterinariosPage implements OnInit {
     }
   }
 
-  changeStatus(estado: string, tipoConsulta: string){
-    this.vetServ.changeStatus(estado, tipoConsulta).subscribe((res: any) =>{
+  changeStatus(estado: string){
+    const logguedUser = this.logServ.loggedUser;
+    this.vetServ.changeStatus(estado, logguedUser.id).subscribe((res: any) =>{
       this.status = res.status;
       if(this.status === "on") {
         this.showOn();
