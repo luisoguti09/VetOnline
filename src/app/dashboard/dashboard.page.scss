@@ -13,10 +13,8 @@ ion-content.backgroundDash{
 .listaVets{
     display: flex;
     flex-direction: row;
-    text-align: center;
-    
+    text-align: center; 
     z-index: 20;
-
 }
 .sideMenu{
     background-color: #FCEFF7;
@@ -25,14 +23,6 @@ ion-content.backgroundDash{
 ion-card.cardastico{
     --background: #F2B1DB ;
     --color: rgb(255, 255, 255);
-    height: 250px;
-    width: 280px;
-    margin-top: 200px;
-    margin-left: 100px;
-    margin-right: 100px;
-    padding-top: 50px;
-    left: 0;
-    right: 0;
     --background: #F2B1DB
     
 }
@@ -47,25 +37,76 @@ ion-card-content.contentVet{
     font-weight: bold;
 }
 
-ion-card.border-card-on{
-   
+        
+.border-card-on{
+  
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+    height: 410px;
+    width: 300px;
+    line-height: 64px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
     border-radius: 10px;
-    --background: green;
-    display: flex;
-    flex-direction: column;
-    height: 75vh;
-    width: 350px;
-    margin:5%;
-    padding-top: 50px;
-    left: 0;
-    right: 0;
+    transition: all .3s;
+    cursor: pointer;
+    
+    &:hover {
+        filter: contrast(1.1);
+    }
+    
+    &:active {
+        filter: contrast(0.9);
+    }
+    
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        border: 8px solid green;
+        transition: all .5s;
+        animation: clippath 3s infinite linear;
+        border-radius: 10px;
+    }
+    
+    &::after {
+        animation: clippath 3s infinite -1.5s linear;
+    }
+   
+
+
+}
+@keyframes clippath {
+    0%,
+    100% {
+        clip-path: inset(0 0 98% 0);
+    }
+    
+    25% {
+        clip-path: inset(0 98% 0 0);
+    }
+    50% {
+        clip-path: inset(98% 0 0 0);
+    }
+    75% {
+        clip-path: inset(0 0 0 98%);
+    }
 }
 
+
+
+
 ion-card.border-card-off{
-    border-radius: 10px;
+    border-radius: 20px;
     --background:red ;
-    height: 250px;
-    width: 280px;
+    height: 400px;
+    width: 300px;
     margin-top: 200px;
     margin-left: 100px;
     margin-right: 100px;

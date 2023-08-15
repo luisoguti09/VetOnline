@@ -20,6 +20,6 @@ import { VeterinariosPageRoutingModule } from '../veterinarios/veterinarios-rout
     CallPageModule,
     VeterinariosPageModule
   ],
-  declarations: [DashboardPage]
+  declarations: [DashboardPage],
 })
 export class DashboardPageModule {}

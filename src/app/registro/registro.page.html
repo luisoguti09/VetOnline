@@ -39,7 +39,7 @@
         <ion-select formControlName="tipoUsuario" placeholder="Tipo de usuario" class="selectT">
           <ion-select-option  *ngFor="let tipo of tipoUsuarios" [value]="tipo">{{ tipo.descripcion }}</ion-select-option>
         </ion-select>
-        <ion-button (click)="guardar()" class="botonReg" >
+        <ion-button (click)="guardar()" class="botonReg" [routerLink]="['/dashboard']" >
           Registrarme
         </ion-button>
       </form>

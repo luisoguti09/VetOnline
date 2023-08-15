@@ -6,9 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class VeterinariosServiceService {
 
-  conect: string = "";
-  url = 'https://vetonline.cu.ma';
-  httpOptions: any;
+  public conect: string = "";
+  public url = 'https://vetonline.cu.ma';
+  public httpOptions: any;
+  public consulta!: boolean;
+
   
   constructor(
     private httpClient: HttpClient
@@ -36,6 +38,15 @@ export class VeterinariosServiceService {
      
     },this.httpOptions);
   }
+
+  recibirCons(tipoConsulta: string, id: number){
+    return this.httpClient.get(`${this.url}/tipoConsulta.php`);
+  }
+
+  atenderCons(){
+
+  }
+
   
   
 }

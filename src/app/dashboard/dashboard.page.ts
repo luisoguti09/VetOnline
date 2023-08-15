@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { InfiniteScrollCustomEvent } from '@ionic/angular';
 import { LoginServiceService } from '../services/login-service.service';
 import { VeterinariosServiceService } from '../services/veterinarios-service.service';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { UsuariosPage } from '../usuarios/usuarios.page';
+import { FirebasexService } from '../services/firebasex.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
   styleUrls: ['./dashboard.page.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class DashboardPage implements OnInit {
 
@@ -16,11 +18,13 @@ export class DashboardPage implements OnInit {
   public veterinarios: any;
   public items: any = [];
   public associated! : any;
+  public tipoConsulta: any;
   
   constructor(
     private logServ: LoginServiceService,
     private fb: FormBuilder,
-    private vetServ: VeterinariosServiceService
+    private vetServ: VeterinariosServiceService,
+    private fireserv: FirebasexService,
   ) { 
     this.form = this.fb.group({
       fomrs: new FormControl('', [Validators.required]), 
@@ -54,17 +58,14 @@ export class DashboardPage implements OnInit {
 
 showAsoc(){
   let loggedUser: any = this.logServ.loggedUser;
-  
-
 if( !!loggedUser?.vetAsocId && loggedUser.vetAsocId != 0) {
   if(!!this.veterinarios && this.veterinarios.length >0){
     this.associated = this.veterinarios?.find((vet: any) => vet.id === loggedUser.vetAsocId);
     console.log(this.associated);
    return this.associated?.status === 'on' ? true :  false;
   }
-  
 }
-return false;
+  return false;
 }
 
 mostrarVets(){
@@ -72,6 +73,16 @@ mostrarVets(){
       this.veterinarios = res;  
       console.log(this.veterinarios);
     })
-  
 }
+
+// atenderTipoCons(){
+//   this.vetServ.recibirCons().subscribe(res=>{
+//     this.tipoConsulta = res;
+//   })
+// }
+
+test(){
+  this.fireserv.test();
+}
+
 }

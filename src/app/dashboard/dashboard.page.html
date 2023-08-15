@@ -1,3 +1,4 @@
+
 <ion-app>
   <ion-content class="backgroundDash no-scroll">
     <ion-split-pane contentId="main-content" class="">
@@ -18,8 +19,9 @@
         <app-veterinarios  *ngIf="!showAsoc()"></app-veterinarios>
       </ion-router-outlet>
     </ion-split-pane>
-    <ion-card *ngIf="showAsoc()" [ngClass]="{'border-card-on':  associated?.status ==='on'}">
-      <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+    <div class="border-card-on"  [ngClass]="{'border-card-on':  associated?.status ==='on'}">
+    <ion-card *ngIf="showAsoc()">
+     <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
       <ion-card-header>
         <ion-card-subtitle>Mi Veterinario</ion-card-subtitle>
         <ion-card-title>{{associated?.nombre}} {{associated?.apellido}}</ion-card-title>
@@ -27,9 +29,10 @@
       <ion-card-content class="contentVet" style="font-family: 'Times New Roman', Times, serif; color:antiquewhite" >
         Estado: {{associated?.status}}
       </ion-card-content>
-      <ion-button fill="clear" [routerLink]="['/data-veterinario']">Video Llamada</ion-button>
+      <ion-button fill="clear" (click)="test()">Video Llamada</ion-button>
       <ion-button fill="clear">Mensaje</ion-button>
     </ion-card>
+  </div>
     <ion-infinite-scroll (ionInfinite)="cargandoInfo($event)">
       <ion-infinite-scroll-content loadingText="Cargando..." loadingSpinner="bubbles"></ion-infinite-scroll-content>
     </ion-infinite-scroll>
