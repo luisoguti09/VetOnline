@@ -72,7 +72,6 @@ ion-toolbar {
   /*Input*/
   ion-input.custom {
     background: rgb(255, 247, 247);
-
     --color:#000 ;
     --placeholder-color: #ddd;
     --placeholder-opacity: .8;
@@ -100,9 +99,11 @@ ion-toolbar {
     flex-flow: column-reverse;
   }
   ion-content.backgroundLog{
-
-
     --background: url(../../assets/LogoBack.jpeg);
     --background-size:var(--background-size)
 
+}
+
+ion-note.error{
+  visibility: hidden;
 }

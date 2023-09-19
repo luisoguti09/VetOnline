@@ -9,44 +9,54 @@ const routes: Routes = [
   },
   {
     path: 'veterinarios',
-    loadChildren: () => import('./veterinarios/veterinarios.module').then( m => m.VeterinariosPageModule)
+    loadChildren: () => import('./veterinarios/veterinarios.module').then(m => m.VeterinariosPageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },
-  {
-    path: 'usuarios',
-    loadChildren: () => import('./usuarios/usuarios.module').then( m => m.UsuariosPageModule)
+    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'registro',
-    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+    loadChildren: () => import('./registro/registro.module').then(m => m.RegistroPageModule)
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardPageModule)
   },
   {
     path: 'videocall',
-    loadChildren: () => import('./videocall/videocall.module').then( m => m.VideocallPageModule)
+    loadChildren: () => import('./videocall/videocall.module').then(m => m.VideocallPageModule)
   },
   {
     path: 'payment',
-    loadChildren: () => import('./payment/payment.module').then( m => m.PaymentPageModule)
+    loadChildren: () => import('./payment/payment.module').then(m => m.PaymentPageModule)
   },
   {
     path: 'call',
-    loadChildren: () => import('./call/call.module').then( m => m.CallPageModule)
+    loadChildren: () => import('./call/call.module').then(m => m.CallPageModule)
   },
-{
+  {
 
     path: 'dashboard-veterinarios',
-    loadChildren: () => import('./dashboard-veterinarios/dashboard-veterinarios.module').then( m => m.DashboardVeterinariosPageModule)
-  },  {
+    loadChildren: () => import('./dashboard-veterinarios/dashboard-veterinarios.module').then(m => m.DashboardVeterinariosPageModule)
+  },
+  {
     path: 'data-veterinario',
-    loadChildren: () => import('./data-veterinario/data-veterinario.module').then( m => m.DataVeterinarioPageModule)
-  }
+    loadChildren: () => import('./data-veterinario/data-veterinario.module').then(m => m.DataVeterinarioPageModule)
+  },
+  {
+    path: 'tycs',
+    loadChildren: () => import('./tycs/tycs.module').then(m => m.TycsPageModule)
+  },  {
+    path: 'mascotas',
+    loadChildren: () => import('./mascotas/mascotas.module').then( m => m.MascotasPageModule)
+  },
+  {
+    path: 'detalle-mascotas',
+    loadChildren: () => import('./detalle-mascotas/detalle-mascotas.module').then( m => m.DetalleMascotasPageModule)
+  },
+
+  
 
 ];
 
@@ -56,4 +66,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

@@ -25,6 +25,8 @@ export class DashboardVeterinariosPage implements OnInit {
   public message: string = 'Esperando por una consulta';
   public id: string = '23'
   public status: string = "off";
+  public mostrarHistory: boolean = false;
+  public historialMascotas: any;
 
   constructor(
     private messageService: MessageService,
@@ -92,6 +94,13 @@ export class DashboardVeterinariosPage implements OnInit {
     if (ev.detail.role === 'confirmar') {
       this.message = `Hola, ${ev.detail.data}!`;
     }
+  }
+
+  buscarHistorial(id: number){
+    this.vetServ.consultarHistorial(1).subscribe(res=>{
+      this.historialMascotas = res;
+      this.mostrarHistory = true;
+    })
   }
 
 }

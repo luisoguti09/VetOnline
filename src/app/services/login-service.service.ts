@@ -31,13 +31,15 @@ export class LoginServiceService {
     return this.httpClient.get(`${this.url}/login.php?vet-asoc-id=${vetAsoc}`);
   }
   
-  guardar(nombre: string, apellido: string, email: string, pass: string, tipoUsuario: string ){
+  guardar(nombre: string, apellido: string, edad: number, email: string, pass: string, confirmPass: string, tycs: string, tipoUsuario: string ){
     return this.httpClient.post(`${this.url}/registro.php`,{
       nombre, 
       apellido,
+      edad,
       tipoUsuario,
       password: pass,
-      usuario: email
+      usuario: email,
+      tycs,
     },this.httpOptions)
   }
 

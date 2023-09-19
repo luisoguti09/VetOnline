@@ -3,7 +3,6 @@ import { InfiniteScrollCustomEvent } from '@ionic/angular';
 import { LoginServiceService } from '../services/login-service.service';
 import { VeterinariosServiceService } from '../services/veterinarios-service.service';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { UsuariosPage } from '../usuarios/usuarios.page';
 import { FirebasexService } from '../services/firebasex.service';
 
 @Component({
@@ -33,7 +32,7 @@ export class DashboardPage implements OnInit {
 
   public appPages = [
     { title: 'Veterinarios', url: '/veterinarios', icon: 'medkit' },
-    { title: 'Usuarios', url: '/usuarios', icon: 'people' },
+    { title: 'Mascotas', url: '/mascotas', icon: 'paw' },
     { title: 'Logout', url: '/logout', icon: 'log-out' },
   ];
   public labels = ['Consejos', 'Tinder de Mascotas', 'Notas', 'Tabla de Alimentacion', 'Querés viajar?', 'Recordatorios'];

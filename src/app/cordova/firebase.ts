@@ -1,6 +1,6 @@
 
 
-
+const cordova = require('cordova-android')
 const ConnectyCube = require('connectycube');
 let token = this.getToken();
 
@@ -93,7 +93,7 @@ const payload = JSON.stringify({
   
   // https://stackoverflow.com/questions/51585819/how-to-detect-environment-in-a-cordova-android-application
   let IS_DEV_ENV;
-  
+
   cordova.plugins.IsDebug.getIsDebug(
     (isDebug: any) => {
       IS_DEV_ENV = isDebug;

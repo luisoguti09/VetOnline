@@ -39,6 +39,7 @@ ion-card {
     border-radius: 20px;
     margin-top: 100px;
     margin-bottom: 100px;
+    outline-color: #9A93BD;
   }
   ion-button.botonReg{
     --background: #9A93BD;
@@ -55,4 +56,10 @@ ion-card {
   .selectT{
     color: #141414;
 
+  }
+
+  .tycs{
+    text-align: center;
+    align-items: center;
+    align-content: space-between;
   }

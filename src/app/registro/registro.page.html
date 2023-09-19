@@ -1,21 +1,21 @@
 <ion-header class="headerReg">
   <div class="toolbar-container">
-  <ion-toolbar >
-    <ion-buttons slot="start">
-      <ion-back-button color="dark" default-href="#" [routerLink]="['/login']"></ion-back-button>
-    </ion-buttons>
-    <ion-title >Registrate facilmente</ion-title>
-  </ion-toolbar>
-</div>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button color="dark" default-href="#" [routerLink]="['/login']"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Registrate facilmente</ion-title>
+    </ion-toolbar>
+  </div>
 </ion-header>
 
 <ion-content class="backgroundLog">
-  <ion-card >
+  <ion-card>
     <img src="../../assets/backLog.png" alt="logoVet" class="img-card">
     <ion-card-header>
     </ion-card-header>
     <ion-card-content>
-      <form action="formularioRegistro" (ngSubmit)="guardar()" [formGroup]="form">
+      <form action="formularioRegistro" method="" (ngSubmit)="guardar()" [formGroup]="form">
         <ion-item>
           <ion-label position="floating">Nombre</ion-label>
           <ion-input formControlName="nombre"></ion-input>
@@ -23,6 +23,10 @@
         <ion-item>
           <ion-label position="floating">Apellido</ion-label>
           <ion-input formControlName="apellido"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Edad</ion-label>
+          <ion-input formControlName="edad"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Email</ion-label>
@@ -37,13 +41,16 @@
           <ion-input formControlName="confirmPass" type="password"> </ion-input>
         </ion-item>
         <ion-select formControlName="tipoUsuario" placeholder="Tipo de usuario" class="selectT">
-          <ion-select-option  *ngFor="let tipo of tipoUsuarios" [value]="tipo">{{ tipo.descripcion }}</ion-select-option>
+          <ion-select-option *ngFor="let tipo of tipoUsuarios" [value]="tipo">{{ tipo.descripcion }}</ion-select-option>
         </ion-select>
-        <ion-button (click)="guardar()" class="botonReg" [routerLink]="['/dashboard']" >
+        <div class="tycs">
+          <ion-checkbox formControlName="tycs" (change)="test()" value="TyCs" inputId="tycs">I agree to the terms and conditions</ion-checkbox>
+          <label for="tycs" [routerLink]="['/tycs']">Aceptar Terminos y Condiciones</label>
+        </div>
+        <ion-button (click)="guardar()" class="botonReg" [disabled]="form.invalid">
           Registrarme
         </ion-button>
       </form>
     </ion-card-content>
   </ion-card>
-
 </ion-content>

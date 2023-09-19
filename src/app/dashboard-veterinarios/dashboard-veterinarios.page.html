@@ -4,42 +4,44 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>   
+<ion-content>
   <div class="card">
     <form [formGroup]="formGroup">
-       <p-toast [breakpoints]="{'920px': {width: '100%', right: '0', left: '0'}}"></p-toast>
-      <p-slider ></p-slider>
-      <p-button type="button"  [disabled]="status === 'on'" class="button-green"
-      (click)="changeStatus('on')" >Activarse para Video Llamadas</p-button>
-      <p-button type="button"  [disabled]="status === 'on'" 
-      (click)="changeStatus('on')" class="button-green"
-      >Activarse para Chat</p-button>
-      <p-button type="button"  [disabled]="status === 'off'"
-      (click)="changeStatus('off')"label="Descativarse" class="p-button-danger"></p-button>    
-  </form>
-</div>
+      <p-toast [breakpoints]="{'920px': {width: '100%', right: '0', left: '0'}}"></p-toast>
+      <p-slider></p-slider>
+      <p-button type="button" [disabled]="status === 'on'" class="button-green" (click)="changeStatus('on')">Activarse
+        para Video Llamadas</p-button>
+      <p-button (click)="buscarHistorial(1)">Ver Historial</p-button>
+      <p-button type="button" [disabled]="status === 'on'" (click)="changeStatus('on')" class="button-green">Activarse
+        para Chat</p-button>
+      <p-button type="button" [disabled]="status === 'off'" (click)="changeStatus('off')" label="Descativarse"
+        class="p-button-danger"></p-button>
+    </form>
+  </div>
 
-<div class="modalClass">
-  <ion-button id="open-moda2l" expand="block" class="modalClass1" [routerLink]="['/data-veterinario']">Abrir</ion-button>
-  <p>{{ message }}</p>
-  <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
-    <ng-template>
-      <ion-header>
-        <ion-toolbar>
-          <ion-buttons slot="start">
-            <ion-button (click)="cancel()">Cancel</ion-button>
-          </ion-buttons>
-          <ion-title>Bienvenido a la Sala</ion-title>
-          <ion-buttons slot="end">
-            <ion-button (click)="confirm()" [strong]="true" >Confirmar</ion-button>
-          </ion-buttons>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content >
+  <div class="modalClass">
+    <ion-button id="open-moda2l" expand="block" class="modalClass1"
+      [routerLink]="['/data-veterinario']">Abrir</ion-button>
+    <p>{{ message }}</p>
+    <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-button (click)="cancel()">Cancel</ion-button>
+            </ion-buttons>
+            <ion-title>Bienvenido a la Sala</ion-title>
+            <p-button (click)="buscarHistorial(1)" icon="pi pi-external-link" label="Show ">Historial</p-button>
+            <p-dialog header="Header" [visible]="mostrarHistory" [style]="{width: '50vw'}">
+              {{historialMascotas}}
+            </p-dialog>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
           <app-data-veterinario></app-data-veterinario>
-      </ion-content>
-    </ng-template>
-  </ion-modal>
-</div>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </div>
 
 </ion-content>

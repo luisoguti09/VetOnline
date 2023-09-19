@@ -31,11 +31,9 @@ export class VeterinariosServiceService {
   }
 
   changeStatus(status: string, id: number){
-    
     return this.httpClient.put(`${this.url}/status.php`,{
       "status": status,
       "id": id
-     
     },this.httpOptions);
   }
 
@@ -43,9 +41,10 @@ export class VeterinariosServiceService {
     return this.httpClient.get(`${this.url}/tipoConsulta.php`);
   }
 
-  atenderCons(){
-
+  consultarHistorial(id: number){
+    return this.httpClient.get(`${this.url}/historial.php?id_mascota=${id}`);
   }
+
 
   
   

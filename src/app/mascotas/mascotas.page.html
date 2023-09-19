@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mascotas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p-table [value]="mascotas" class="tablePet" [tableStyle]="{'min-width': '60rem'}">
+    <ng-template pTemplate="caption">
+        <div class="flex align-items-center justify-content-between">
+            Mis mascotas
+            <p-button icon="pi pi-refresh"></p-button>
+          <p-button>
+          <a href="#" [routerLink]="['/detalle-mascotas']" class="plusPet">Nueva mascota</a>
+        </p-button>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Foto</th>
+            <th>Tipo</th>
+            <th>Raza</th>
+            <th>Edad</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-mascotas>
+        <tr>
+            <td>{{mascotas.nombre}}</td>
+            <td>{{mascotas.apellido}}</td>
+            <td><img [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' 
+              + mascotas.foto" [alt]="mascotas.nombre" width="100" class="shadow-4" /></td>
+            <td>{{mascotas.tipo}}</td>
+            <td>{{mascotas.raza}}</td>
+            <td>{{mascotas.edad}}</td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+        <div class="flex align-items-center justify-content-between">
+            En total tenés {{mascotas ? mascotas.length : 0 }} mascotas.
+        </div>
+    </ng-template>
+</p-table>
+</ion-content>
