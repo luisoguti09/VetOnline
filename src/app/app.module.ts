@@ -14,7 +14,7 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
-
+import { CalendarModule } from 'primeng/calendar';
 
 
 @NgModule({
@@ -34,7 +34,8 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
     FileUploadModule,
     AutoCompleteModule,
     CheckboxModule,
-    DynamicDialogModule
+    DynamicDialogModule,
+    CalendarModule
   ],
   providers: [{
     provide:

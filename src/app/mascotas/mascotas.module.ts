@@ -6,6 +6,8 @@ import { MascotasPageRoutingModule } from './mascotas-routing.module';
 import { MascotasPage } from './mascotas.page';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
+import { MessagesModule } from 'primeng/messages';
+
 
 @NgModule({
   imports: [
@@ -14,7 +16,8 @@ import { ButtonModule } from 'primeng/button';
     IonicModule,
     MascotasPageRoutingModule,
     TableModule,
-    ButtonModule
+    ButtonModule,
+    MessagesModule
   ],
   declarations: [MascotasPage]
 })

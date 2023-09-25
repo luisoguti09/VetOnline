@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MessagesModule } from 'primeng/messages';
 import { IonicModule } from '@ionic/angular';
 
 import { DetalleMascotasPageRoutingModule } from './detalle-mascotas-routing.module';
-
+import { CalendarModule } from 'primeng/calendar';
 import { DetalleMascotasPage } from './detalle-mascotas.page';
 
 @NgModule({
@@ -13,7 +13,10 @@ import { DetalleMascotasPage } from './detalle-mascotas.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    DetalleMascotasPageRoutingModule
+    DetalleMascotasPageRoutingModule,
+    ReactiveFormsModule,
+    MessagesModule,
+    CalendarModule
   ],
   declarations: [DetalleMascotasPage]
 })

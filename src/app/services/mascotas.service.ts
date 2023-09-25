@@ -19,12 +19,13 @@ export class MascotasService {
       };
     }
 
-  mostrarPets(){
-    return this.httpClient.get(`${this.url}/mascotas.php`);
+  mostrarPets(idHumano: number){
+    return this.httpClient.get(`${this.url}/mascotas.php?id=${idHumano}`);
   }
 
-  guardarPet(nombre: string, apellido: string, foto: string, tipoMascota: string, raza: string, edad: string){
+  guardarPet(idHumano: number, nombre: string, apellido: string, foto: string, tipoMascota: string, raza: string, edad: string){
     return this.httpClient.post(`${this.url}/mascotas.php`,{
+      idHumano,
       nombre, 
       apellido,
       foto,

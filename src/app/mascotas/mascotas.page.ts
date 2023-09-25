@@ -3,6 +3,7 @@ import { MascotasService } from '../services/mascotas.service';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { PrimeIcons, MenuItem } from 'primeng/api';
+import { LoginServiceService } from '../services/login-service.service';
 
 @Component({
   selector: 'app-mascotas',
@@ -20,6 +21,7 @@ export class MascotasPage implements OnInit {
     private petServ: MascotasService,
     private router: Router,
     private messageService: MessageService,
+    private logServ: LoginServiceService
   ) { }
 
   ngOnInit() {
@@ -33,13 +35,10 @@ export class MascotasPage implements OnInit {
   }
 
 mostrarPets() {
-  this.petServ.mostrarPets().subscribe((res: any) => {
+  this.petServ.mostrarPets(this.logServ.loggedUser.id).subscribe((res: any) => {
     this.mascotas = res;
     console.log(this.mascotas);
   })
 }
 
-sumarPet(){
-  
-}
 }

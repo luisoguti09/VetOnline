@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { MascotasService } from '../services/mascotas.service';
+import { LoginServiceService } from '../services/login-service.service';
 
 @Component({
   selector: 'app-detalle-mascotas',
@@ -19,6 +20,7 @@ export class DetalleMascotasPage implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private messageService: MessageService,
+    private logServ: LoginServiceService,
   ) { 
     this.form = this.fb.group({
       nombre: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z ]+$/)]),
@@ -35,6 +37,7 @@ export class DetalleMascotasPage implements OnInit {
 
   guardarMascota() {
     this.petServ.guardarPet(
+      this.logServ.loggedUser.id,
       this.form?.get('nombre')?.value,
       this.form?.get('apellido')?.value,
       this.form?.get('foto')?.value,

@@ -11,7 +11,7 @@
     <ion-card-header>
     </ion-card-header>
     <ion-card-content>
-      <form formGroup="form">
+      <form [formGroup]="form">
         <ion-item>
           <ion-label position="floating">Nombre</ion-label>
           <ion-input formControlName="nombre"></ion-input>
@@ -33,8 +33,8 @@
           <ion-input formControlName="raza"> </ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Edad</ion-label>
-          <ion-input formControlName="edad"></ion-input>
+          <ion-label position="floating">Fecha nacimiento</ion-label>
+          <ion-datetime formControlName="edad"></ion-datetime>
         </ion-item>
         <ion-button (click)="guardarMascota()" class="btnPet" [disabled]="form.invalid">
           Cargar mi mascota
