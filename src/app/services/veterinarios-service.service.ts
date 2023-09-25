@@ -11,7 +11,7 @@ export class VeterinariosServiceService {
   public httpOptions: any;
   public consulta!: boolean;
 
-  
+   
   constructor(
     private httpClient: HttpClient
   ) {

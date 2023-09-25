@@ -32,6 +32,8 @@ ion-card.cardastico {
   left: 0;
   right: 0;
   --background: #F2B1DB ;
+  color: black;
+  --color:var( black);
 }
 
 ion-card.border-card-on {
@@ -45,6 +47,8 @@ ion-card.border-card-on {
   padding-top: 50px;
   left: 0;
   right: 0;
+  color: black;
+  --color:var( black);
 }
 
 ion-card.border-card-off {

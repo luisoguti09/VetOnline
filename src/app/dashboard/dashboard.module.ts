@@ -7,6 +7,7 @@ import { VeterinariosPageModule } from '../veterinarios/veterinarios.module';
 import { CallPageModule } from '../call/call.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VeterinariosPageRoutingModule } from '../veterinarios/veterinarios-routing.module';
+import { ButtonModule } from 'primeng/button';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { VeterinariosPageRoutingModule } from '../veterinarios/veterinarios-rout
     DashboardPageRoutingModule,
     VeterinariosPageRoutingModule,
     CallPageModule,
-    VeterinariosPageModule
+    VeterinariosPageModule,
+    ButtonModule
   ],
   declarations: [DashboardPage],
 })
