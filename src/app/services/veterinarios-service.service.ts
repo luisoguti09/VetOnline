@@ -10,6 +10,7 @@ export class VeterinariosServiceService {
   public url = 'https://vetonline.cu.ma';
   public httpOptions: any;
   public consulta!: boolean;
+  public procedeUrg!: any;
 
    
   constructor(
@@ -24,6 +25,15 @@ export class VeterinariosServiceService {
 
   mostrarVets(){
     return this.httpClient.get(`${this.url}/veterinarios.php`);
+  }
+
+  atiendeUrg(aceptaUrg: string){
+    return this.httpClient.get(`${this.url}/veterinarios.php?atiende_urg=${aceptaUrg}`)
+  }
+
+  urgencia(){
+    return this.mostrarVets();
+   
   }
 
   choseenOne(id: any){

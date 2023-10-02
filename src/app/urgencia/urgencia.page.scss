@@ -1,0 +1,38 @@
+.btnUrg{
+    align-items: center;
+    text-align: center;
+    display: flex;
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    margin-top: 90px;
+    height: 90px;
+    width: auto;
+    color: white;
+    background-color: red;
+    border-radius: 50px;
+}
+
+.backUrg{
+    background-color: rgb(37, 36, 36);
+}
+
+.urgencia-container{
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.usrgencia{
+    width: 150px;
+    height: 150px;
+    background: red;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

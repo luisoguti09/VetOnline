@@ -8,6 +8,7 @@ import { CallPageModule } from '../call/call.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VeterinariosPageRoutingModule } from '../veterinarios/veterinarios-routing.module';
 import { ButtonModule } from 'primeng/button';
+import { UrgenciaPageModule } from '../urgencia/urgencia.module';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ButtonModule } from 'primeng/button';
     VeterinariosPageRoutingModule,
     CallPageModule,
     VeterinariosPageModule,
-    ButtonModule
+    ButtonModule,
+    UrgenciaPageModule
   ],
   declarations: [DashboardPage],
 })

@@ -55,6 +55,10 @@ const routes: Routes = [
     path: 'detalle-mascotas',
     loadChildren: () => import('./detalle-mascotas/detalle-mascotas.module').then( m => m.DetalleMascotasPageModule)
   },
+  {
+    path: 'urgencia',
+    loadChildren: () => import('./urgencia/urgencia.module').then( m => m.UrgenciaPageModule)
+  },
 
   
 

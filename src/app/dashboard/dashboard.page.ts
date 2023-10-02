@@ -34,6 +34,7 @@ export class DashboardPage implements OnInit {
     { title: 'Veterinarios', url: '/veterinarios', icon: 'medkit' },
     { title: 'Mascotas', url: '/mascotas', icon: 'paw' },
     { title: 'Logout', url: '/logout', icon: 'log-out' },
+    { title: 'URGENCIA', url: '/urgencia', icon: 'bell' },
   ];
   public labels = ['Consejos', 'Tinder de Mascotas', 'Notas', 'Tabla de Alimentacion', 'Querés viajar?', 'Recordatorios'];
 
