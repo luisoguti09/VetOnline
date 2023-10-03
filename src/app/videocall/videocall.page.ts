@@ -38,7 +38,7 @@ export class VideocallPage implements OnInit {
 
     this.salaDeLlamadas = this.actRt.snapshot.queryParams['salaDeLlamadas']
 
-    navigator.mediaDevices.getUserMedia({ video: { width: 300, height: 300 }, audio: true })
+    navigator.mediaDevices.getUserMedia({ video: { width: 500, height: 500 }, audio: true })
       .then(stream => {
 
         this.myVideo.nativeElement.srcObject = stream
