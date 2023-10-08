@@ -45,10 +45,10 @@ export class LoginServiceService {
 
   tipoUser(){
    return this.httpClient.get(`${this.url}/tipoUsuario.php`)
-  }
+  } 
 
-  loginVet(tipoUser:any){
-    return this.httpClient.get(`${this.url}/login.php?tipoUser=${tipoUser}`);
+  tipoLogin(tipoUser:any, tipoId:number){
+    return this.httpClient.get(`${this.url}/login.php?tipoUser=${tipoUser}&id=${tipoId}`);
   }
 
 }

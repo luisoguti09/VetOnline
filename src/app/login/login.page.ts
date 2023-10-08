@@ -19,9 +19,13 @@ export class LoginPage implements OnInit {
     pass: new FormControl('', [Validators.required]),
     
   });
-  error: any;
-  visible: boolean = false;
-  
+  public error: any;
+  public visible: boolean = false;
+  public id_user!: number;
+  public id_vet!: number;
+  public user: boolean = false;
+  public vet: boolean = false;
+
   constructor(
     private logServ: LoginServiceService,
     private fb: FormBuilder,
@@ -29,7 +33,7 @@ export class LoginPage implements OnInit {
     private messageService: MessageService,
   ) { }
   ngOnInit() { }
-  
+  //loguear y redigir al usuario o veterinario
   loguedUser() {
     console.log(this.form?.get('email')?.value);
     this.logServ.loginSucc(
@@ -39,13 +43,24 @@ export class LoginPage implements OnInit {
         this.logServ.loggedUser = res.data;
         if (res.success && res.data.tipoUsuario == 'usuario' ) {
          this.router.navigate(['dashboard']);
+         this.user= true;
         } 
         if (res.success && res.data.tipoUsuario == 'veterinario') {
-          this.router.navigate(['dashboard-veterinarios'])
-          
+          this.router.navigate(['dashboard-veterinarios']);
+          this.vet= true
         }
     });
   }
+
+  tipoUser(){
+    if (this.user) {
+      this.logServ.loggedUser.id = this.id_user;
+    }
+    if (this.vet) {
+      this.logServ.loggedUser.id = this.id_vet;
+    }
+  }
+
 
   showError() {
     this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Complete todos los campos' });

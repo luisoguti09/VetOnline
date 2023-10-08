@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SignalData } from 'simple-peer';
 
@@ -7,16 +8,24 @@ import { SignalData } from 'simple-peer';
 })
 export class SignalingService {
 
-
+  public url = 'https://vetonline.cu.ma';
+  public httpOptions: any;
 
   //get socketId() {
    
   //}
 
-  constructor() { }
+  constructor(
+    private httpClient: HttpClient
+  ) {
+    this.httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+      }),
+    };
+   }
 
   connect() {
-    
   }
 
   private listen(channel: string, fn: Function) {
@@ -35,6 +44,10 @@ export class SignalingService {
     this.send('room_join_request', msg)
   }
 
+  notificationRoom(idUser: number, idVet: number){
+    return this.httpClient.get(`${this.url}/login.php?id_user=${idUser}&id_vet=${idVet}`);
+  }
+
   onRoomParticipants(fn: (participants: Array<string>) => void) {
     this.listen('room_users', fn)
   }
@@ -49,7 +62,7 @@ export class SignalingService {
 
   sendAnswerSignal(msg: SignalMessage) {
     this.send('answer_signal', msg)
-  }
+  } 
 
   onAnswer(fn: (msg: SignalMessage) => void) {
     this.listen('answer', fn)
