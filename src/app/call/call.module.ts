@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   declarations: [CallPage],
-  exports: [CallPage]
+  exports: [
+    CallPage
+  ]
 })
 export class CallPageModule {}

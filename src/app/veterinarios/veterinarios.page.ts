@@ -3,6 +3,8 @@ import { InfiniteScrollCustomEvent } from '@ionic/angular';
 import { VeterinariosServiceService } from '../services/veterinarios-service.service';
 import * as SimplePeer from 'simple-peer';
 import { LoginServiceService } from '../services/login-service.service';
+import { Router } from '@angular/router';
+import { CallPage } from '../call/call.page';
 
 
 @Component({
@@ -12,15 +14,17 @@ import { LoginServiceService } from '../services/login-service.service';
 })
 export class VeterinariosPage implements OnInit {
 
-  veterinarios: any = [];
-  vets: any = [];
-  searchedvets: any;
-  items: any = [];
-  showCall = false;
+  public veterinarios: any = [];
+  public vets: any = [];
+  public searchedvets: any;
+  public items: any = [];
+  public showCall = false;
+  public associated! : any;
   constructor(
     private vetServ: VeterinariosServiceService,
-    private logServ: LoginServiceService
-
+    private logServ: LoginServiceService,
+    private router: Router,
+    private call: CallPage
   ) { }
 
   ngOnInit() {
@@ -65,5 +69,15 @@ export class VeterinariosPage implements OnInit {
   }
   canDismiss() { }
   presentingElement() { }
+
+  videoLlamada(){
+    this.call.createRoom()
+  }
+
+  goToDatVet(vet: any) {
+    console.log(vet);
+    this.vetServ.setSelectedVet(vet);
+    this.call.createRoom();
+  }
 }
 

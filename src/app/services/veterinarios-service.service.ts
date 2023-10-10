@@ -11,6 +11,7 @@ export class VeterinariosServiceService {
   public httpOptions: any;
   public consulta!: boolean;
   public procedeUrg!: any;
+  public selectedVet: any;
 
    
   constructor(
@@ -53,6 +54,9 @@ export class VeterinariosServiceService {
 
   consultarHistorial(id: number){
     return this.httpClient.get(`${this.url}/historial.php?id_mascota=${id}`);
+  }
+  setSelectedVet(vet: any) {
+    this.selectedVet = vet;
   }
 
 

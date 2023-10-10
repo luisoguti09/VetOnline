@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Peer } from "peerjs";
 import { LoginServiceService } from '../services/login-service.service';
+import { VeterinariosServiceService } from '../services/veterinarios-service.service';
 
 @Component({
   selector: 'app-call',
@@ -13,6 +14,7 @@ export class CallPage implements OnInit {
   public tipoId: any;
   constructor(
     private logServ: LoginServiceService,
+    private vetSrv: VeterinariosServiceService
   ) {
 
   }
@@ -42,7 +44,9 @@ export class CallPage implements OnInit {
   createRoom() {
     console.log("Creating Room")
     // @ts-ignore
-    let room = document.getElementById("room-input").value;
+    let room = `${this.logServ.loggedUser.id}_${this.vetSrv.selectedVet.id}`;
+
+   console.log("room:   " + room);
     if (room == " " || room == "") {
       alert("ingrese un numero de sala")
       return;

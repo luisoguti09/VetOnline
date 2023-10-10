@@ -60,8 +60,7 @@ export class LoginPage implements OnInit {
       this.logServ.loggedUser.id = this.id_vet;
     }
   }
-
-
+  
   showError() {
     this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Complete todos los campos' });
   }

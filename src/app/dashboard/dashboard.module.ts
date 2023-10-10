@@ -22,7 +22,8 @@ import { UrgenciaPageModule } from '../urgencia/urgencia.module';
     CallPageModule,
     VeterinariosPageModule,
     ButtonModule,
-    UrgenciaPageModule
+    UrgenciaPageModule,
+    CallPageModule
   ],
   declarations: [DashboardPage],
 })

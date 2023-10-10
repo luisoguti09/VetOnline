@@ -29,7 +29,7 @@
         style="font-family: 'Times New Roman', Times, serif; color:antiquewhite">
           Estado: {{associated?.status}}
         </ion-card-content>
-        <ion-button id="open-moda2l" expand="block" [routerLink]="['/data-veterinario']">
+        <ion-button id="open-moda2l" expand="block" (click)="goToDatVet()">
           Video Llamada</ion-button>
         <ion-button fill="clear">Mensaje</ion-button>
       </ion-card>

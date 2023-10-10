@@ -4,6 +4,8 @@ import { LoginServiceService } from '../services/login-service.service';
 import { VeterinariosServiceService } from '../services/veterinarios-service.service';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { FirebasexService } from '../services/firebasex.service';
+import { Route, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -24,6 +26,7 @@ export class DashboardPage implements OnInit {
     private fb: FormBuilder,
     private vetServ: VeterinariosServiceService,
     private fireserv: FirebasexService,
+    private router: Router,
   ) { 
     this.form = this.fb.group({
       fomrs: new FormControl('', [Validators.required]), 
@@ -83,6 +86,10 @@ mostrarVets(){
 
 test(){
   this.fireserv.test();
+}
+goToDatVet() {
+  this.vetServ.setSelectedVet(this.associated);
+  this.router.navigate(['/data-veterinario']);
 }
 
 }

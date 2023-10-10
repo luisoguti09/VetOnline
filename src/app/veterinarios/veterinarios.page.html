@@ -14,11 +14,11 @@
         <ion-avatar slot="start">
           <img src="../../assets/veterinarios-avatar/veterinaria4.jpg" alt="">
         </ion-avatar>
-        <ion-label>{{vet.nombre}} {{vet.apellido}} {{vet.id}} 
+        <ion-label>{{vet.nombre}} {{vet.apellido}}
           <p-rating [ngModel]="vet.rating" ></p-rating></ion-label>
         <ion-avatar slot="end">
           <ion-icon size="large" name="phone-portrait-outline"  expand="block" id="open-modal" 
-           href="#" [routerLink]="['/data-veterinario']" class="telefono"></ion-icon>
+           href="#" (click)="goToDatVet(vet)" class="telefono"></ion-icon>
         </ion-avatar>
       </ion-item>
     </div>
