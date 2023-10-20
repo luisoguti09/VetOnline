@@ -5,6 +5,7 @@ import { CallPageRoutingModule } from './call-routing.module';
 import { CallPage } from './call.page';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -13,9 +14,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CallPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [CallPage],
+  declarations: [
+    CallPage
+  ],
   exports: [
     CallPage
+  ],
+  providers:[
+    
   ]
 })
 export class CallPageModule {}

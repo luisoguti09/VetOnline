@@ -2,11 +2,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Peer } from "peerjs";
 import { LoginServiceService } from '../services/login-service.service';
 import { VeterinariosServiceService } from '../services/veterinarios-service.service';
+import { CallService } from '../services/call.service';
 
 @Component({
   selector: 'app-call',
   templateUrl: './call.page.html',
   styleUrls: ['./call.page.scss'],
+  providers:[CallService]
 })
 export class CallPage implements OnInit {
 

@@ -9,6 +9,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VeterinariosPageRoutingModule } from '../veterinarios/veterinarios-routing.module';
 import { ButtonModule } from 'primeng/button';
 import { UrgenciaPageModule } from '../urgencia/urgencia.module';
+import { VeterinariosServiceService } from '../services/veterinarios-service.service';
+import { CallService } from '../services/call.service';
 
 
 @NgModule({
@@ -26,5 +28,11 @@ import { UrgenciaPageModule } from '../urgencia/urgencia.module';
     CallPageModule
   ],
   declarations: [DashboardPage],
+  providers:[
+    CallService
+  ],
+  exports:[
+    DashboardPage
+  ]
 })
 export class DashboardPageModule {}

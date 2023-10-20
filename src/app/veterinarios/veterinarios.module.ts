@@ -5,6 +5,7 @@ import { VeterinariosPageRoutingModule } from './veterinarios-routing.module';
 import { VeterinariosPage } from './veterinarios.page';
 import { CallPageModule } from '../call/call.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { VeterinariosServiceService } from '../services/veterinarios-service.service';
 
 @NgModule({
   imports: [
@@ -19,6 +20,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     VeterinariosPage],
   exports:[
     VeterinariosPage
+  ],
+  providers:[
+    VeterinariosServiceService
   ]
 })
 export class VeterinariosPageModule {}

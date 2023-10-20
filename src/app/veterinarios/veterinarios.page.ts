@@ -4,7 +4,9 @@ import { VeterinariosServiceService } from '../services/veterinarios-service.ser
 import * as SimplePeer from 'simple-peer';
 import { LoginServiceService } from '../services/login-service.service';
 import { Router } from '@angular/router';
-import { CallPage } from '../call/call.page';
+import { CallService } from '../services/call.service';
+
+
 
 
 @Component({
@@ -24,7 +26,7 @@ export class VeterinariosPage implements OnInit {
     private vetServ: VeterinariosServiceService,
     private logServ: LoginServiceService,
     private router: Router,
-    private call: CallPage
+    private callServ: CallService
   ) { }
 
   ngOnInit() {
@@ -70,14 +72,12 @@ export class VeterinariosPage implements OnInit {
   canDismiss() { }
   presentingElement() { }
 
-  videoLlamada(){
-    this.call.createRoom()
-  }
+
 
   goToDatVet(vet: any) {
     console.log(vet);
     this.vetServ.setSelectedVet(vet);
-    this.call.createRoom();
+    this.callServ.makingRoom();
   }
 }
 

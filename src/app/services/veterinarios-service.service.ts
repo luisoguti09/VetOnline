@@ -15,7 +15,7 @@ export class VeterinariosServiceService {
 
    
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
   ) {
     this.httpOptions = {
       headers: new HttpHeaders({

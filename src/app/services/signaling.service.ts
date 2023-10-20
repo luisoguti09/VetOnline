@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SignalData } from 'simple-peer';
+import { CallPage } from '../call/call.page';
 
 
 @Injectable({
@@ -16,7 +17,8 @@ export class SignalingService {
   //}
 
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private call : CallPage,
   ) {
     this.httpOptions = {
       headers: new HttpHeaders({
@@ -42,10 +44,6 @@ export class SignalingService {
 
   requestForJoiningRoom(msg: SignalMessage) {
     this.send('room_join_request', msg)
-  }
-
-  notificationRoom(idUser: number, idVet: number){
-    return this.httpClient.get(`${this.url}/login.php?id_user=${idUser}&id_vet=${idVet}`);
   }
 
   onRoomParticipants(fn: (participants: Array<string>) => void) {
