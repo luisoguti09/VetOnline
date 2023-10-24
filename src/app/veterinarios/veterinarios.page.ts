@@ -1,9 +1,6 @@
-import { Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { InfiniteScrollCustomEvent } from '@ionic/angular';
 import { VeterinariosServiceService } from '../services/veterinarios-service.service';
-import * as SimplePeer from 'simple-peer';
-import { LoginServiceService } from '../services/login-service.service';
-import { Router } from '@angular/router';
 import { CallService } from '../services/call.service';
 
 
@@ -24,8 +21,6 @@ export class VeterinariosPage implements OnInit {
   public associated! : any;
   constructor(
     private vetServ: VeterinariosServiceService,
-    private logServ: LoginServiceService,
-    private router: Router,
     private callServ: CallService
   ) { }
 
@@ -77,7 +72,7 @@ export class VeterinariosPage implements OnInit {
   goToDatVet(vet: any) {
     console.log(vet);
     this.vetServ.setSelectedVet(vet);
-    this.callServ.makingRoom();
+    this.callServ.createRoom();
   }
 }
 

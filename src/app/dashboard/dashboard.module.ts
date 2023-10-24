@@ -9,8 +9,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VeterinariosPageRoutingModule } from '../veterinarios/veterinarios-routing.module';
 import { ButtonModule } from 'primeng/button';
 import { UrgenciaPageModule } from '../urgencia/urgencia.module';
-import { VeterinariosServiceService } from '../services/veterinarios-service.service';
 import { CallService } from '../services/call.service';
+import { CallPage } from '../call/call.page';
 
 
 @NgModule({
@@ -25,11 +25,11 @@ import { CallService } from '../services/call.service';
     VeterinariosPageModule,
     ButtonModule,
     UrgenciaPageModule,
-    CallPageModule
   ],
   declarations: [DashboardPage],
   providers:[
-    CallService
+    CallService,
+    CallPage
   ],
   exports:[
     DashboardPage

@@ -64,7 +64,6 @@ showAsoc(){
 if( !!loggedUser?.vetAsocId && loggedUser.vetAsocId != 0) {
   if(!!this.veterinarios && this.veterinarios.length >0){
     this.associated = this.veterinarios?.find((vet: any) => vet.id === loggedUser.vetAsocId);
-    console.log(this.associated);
    return this.associated?.status === 'on' ? true :  false;
   }
 }
@@ -73,22 +72,15 @@ if( !!loggedUser?.vetAsocId && loggedUser.vetAsocId != 0) {
 
 mostrarVets(){
     this.vetServ.mostrarVets().subscribe(res=>{
-      this.veterinarios = res;  
-      console.log(this.veterinarios);
+      this.veterinarios = res;
     })
 }
-
-// atenderTipoCons(){
-//   this.vetServ.recibirCons().subscribe(res=>{
-//     this.tipoConsulta = res;
-//   })
-// }
 
 test(){
   this.fireserv.test();
 }
 goToDatVet() {
-  this.vetServ.setSelectedVet(this.associated);
+  this.vetServ.selectedVet = this.associated;
   this.router.navigate(['/data-veterinario']);
 }
 

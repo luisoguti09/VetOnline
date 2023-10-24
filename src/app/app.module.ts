@@ -15,6 +15,7 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { CalendarModule } from 'primeng/calendar';
+import { CallPageModule } from './call/call.module';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { CalendarModule } from 'primeng/calendar';
     AutoCompleteModule,
     CheckboxModule,
     DynamicDialogModule,
-    CalendarModule
+    CalendarModule,
+    CallPageModule
   ],
   providers: [{
     provide:
