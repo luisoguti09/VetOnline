@@ -23,24 +23,23 @@ export class VeterinariosServiceService {
       }),
     };
   }
-
+   //Obtener listado completo de veterinarios
   mostrarVets(){
     return this.httpClient.get(`${this.url}/veterinarios.php`);
   }
-
+ //Definir si atiende urgencias
   atiendeUrg(aceptaUrg: string){
     return this.httpClient.get(`${this.url}/veterinarios.php?atiende_urg=${aceptaUrg}`)
   }
 
   urgencia(){
     return this.mostrarVets();
-   
   }
 
   choseenOne(id: any){
     return this.httpClient.get(`${this.url}/login.php?id`);
   }
-
+ //Cambia estado de conexion de veterinarios
   changeStatus(status: string, id: number){
     return this.httpClient.put(`${this.url}/status.php`,{
       "status": status,
@@ -48,23 +47,22 @@ export class VeterinariosServiceService {
     },this.httpOptions);
   }
 
-  recibirCons(tipoConsulta: string, id: number){
+  recibirCons(){
     return this.httpClient.get(`${this.url}/tipoConsulta.php`);
   }
-
+ //muestra historial de mascotas
   consultarHistorial(id: number){
     return this.httpClient.get(`${this.url}/historial.php?id_mascota=${id}`);
   }
-  setSelectedVet(vet: any) {
 
+   //setea veterinario seleccionado
+  setSelectedVet(vet: any) {
     this.selectedVet = vet;
   }
 
+   //Muestra veterinario seleccionado
   getSelectedVet(){
     return this.selectedVet;
   }
 
-
-  
-  
 }

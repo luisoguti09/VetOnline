@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Peer } from "peerjs";
 import { LoginServiceService } from './login-service.service';
 import { VeterinariosServiceService } from './veterinarios-service.service';
+import { NotificationsService } from './notifications.service';
+import { catchError, throttleTime, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +21,7 @@ export class CallService {
   constructor( 
     private logSrv: LoginServiceService,
     private vetSrv: VeterinariosServiceService,
+    private notifServ: NotificationsService,
    ) {  }
 
   notify(msg: any) {
@@ -59,7 +62,9 @@ export class CallService {
     // @ts-ignore
     document?.getElementById("entry-modal")?.hidden = true
   }
-
+  errorHandler(error) {
+    console.log(error);
+  }
   createRoom() {
     const navigator: any = window.navigator;
     console.log(navigator);
@@ -68,9 +73,10 @@ export class CallService {
     // @ts-ignore
     console.log(this.vetSrv.getSelectedVet());
     let room = `${this.logSrv.loggedUser?.id}_${this.vetSrv.selectedVet?.id}`;
-
-    console.log("room:   " + room);
+    this.notifServ.recieveCall(this.logSrv.loggedUser.id, this.vetSrv.selectedVet.id).
    
+    subscribe((res:any)=>{
+      console.log("room:   " + res);
     this.room_id = room;
     this.peer = new Peer(this.room_id)
     this.peer.on('open', (id: any) => {
@@ -91,6 +97,7 @@ export class CallService {
       })
       this.currentPeer = call;
     })
+    });
   }
 
   joinRoom() {

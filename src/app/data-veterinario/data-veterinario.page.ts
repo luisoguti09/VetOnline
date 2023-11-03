@@ -4,6 +4,7 @@ import { OverlayEventDetail } from '@ionic/core/components';
 import { VeterinariosServiceService } from '../services/veterinarios-service.service';
 import { MessageService } from 'primeng/api';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { CallService } from '../services/call.service';
 
 @Component({
   selector: 'app-data-veterinario',
@@ -24,7 +25,10 @@ export class DataVeterinarioPage implements OnDestroy {
     private vetServ: VeterinariosServiceService,
     public dialogService: DialogService,
     public messageService: MessageService,
-  ) { }
+    private callSrv: CallService,
+  ) { 
+
+  }
 
   ngOnInit() {
   }
@@ -71,5 +75,7 @@ export class DataVeterinarioPage implements OnDestroy {
       maximizable: true
     });
   }
+
+  
 
 }

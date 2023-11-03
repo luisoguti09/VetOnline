@@ -25,18 +25,19 @@ export class VeterinariosPage implements OnInit {
   ) { }
 
   ngOnInit() {
-
     this.getVeterinarios();
     this.searchedvets = this.vets;
     this.generateItems();
   }
 
+   //Obtener un listado de veterinarios
   getVeterinarios() {
     this.vetServ.mostrarVets().subscribe(res => {
       this.vets = res;
     });
   }
 
+  //Buscar veterinarios
   searchVet(event: any) {
     const text = event.target.value;
     this.searchedvets = this.vets;
@@ -46,7 +47,7 @@ export class VeterinariosPage implements OnInit {
       });
     }
   }
-
+ //scroll
   private generateItems() {
     const count = this.items.length + 1;
     for (let i = 0; i < 50; i++) {

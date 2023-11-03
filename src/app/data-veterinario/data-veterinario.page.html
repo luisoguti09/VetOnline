@@ -1,12 +1,14 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Datos de tu Veterinario</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button color="dark" default-href="#" [routerLink]="['/dashboard']"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
   <div >
-  <ion-button id="open-modal" expand="block" class="modalColor">Llamar</ion-button>
+  <ion-button id="open-modal" expand="block" class="modalColor" >Llamar</ion-button>
   <p>{{ message }}</p>
   <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)" class="modal">
     <ng-template >

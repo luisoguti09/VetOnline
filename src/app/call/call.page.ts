@@ -13,18 +13,16 @@ export class CallPage implements OnInit {
   public tipoUser: any;
   public tipoId: any;
   constructor(
-    private callServ: CallService,
-    private vetSrv: VeterinariosServiceService,
+    private callServ: CallService
   ) {
 
   }
   ngOnInit() {
   }
-
   room_id: any = null;
-
   // @ts-ignore
-  getUserMedia = (navigator.getUserMedia || navigator?.webkitGetUserMedia || navigator?.mozGetUserMedia).bind(navigator);
+  getUserMedia = (navigator.getUserMedia || navigator?.webkitGetUserMedia || navigator?.mozGetUserMedia)
+  .bind(navigator);
   local_stream: any;
   screenStream: any;
   peer: any;
