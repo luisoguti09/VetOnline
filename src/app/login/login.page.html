@@ -26,7 +26,8 @@
           </ion-list>
         </form>
         <ion-buttons class="button-container">
-          <ion-button type="submit" (click)="loguedUser()" class="colorLogin Button" >
+          <ion-button type="submit" (click)="loguedUser()" *ngIf="!authService.isLoggedIn"
+           class="colorLogin Button" >
             Ingresar
           </ion-button>
           <a href="#" [routerLink]="['/registro']" class="footLogin">Registrarse</a>

@@ -16,6 +16,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { CalendarModule } from 'primeng/calendar';
 import { CallPageModule } from './call/call.module';
+import { AuthGoogleService } from './services/auth-google.service';
 
 
 @NgModule({
@@ -37,14 +38,26 @@ import { CallPageModule } from './call/call.module';
     CheckboxModule,
     DynamicDialogModule,
     CalendarModule,
-    CallPageModule
+    CallPageModule,
+    AppModule
   ],
   providers: [{
     provide:
     RouteReuseStrategy,
     useClass: IonicRouteStrategy,
-    },
-    ],
+    provide: 'SocialAuthServiceConfig',
+    useValue: {
+      autoLogin: true, //keeps the user signed in
+      providers: [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider('812772317778-j1k7i4oct0hb5rng5gehhkfm6poiu2d9.apps.googleusercontent.com') // your client id
+        }
+      ]
+    }
+  },
+    AuthGuardService],
+  
   bootstrap: [AppComponent],
   exports:[
     MessagesModule,

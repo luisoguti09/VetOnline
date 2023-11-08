@@ -1,0 +1,10 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Salir</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <button type="button" (click)="logout()" 
+  *ngIf="authService.isLoggedIn" class="logoutBtn">Logout</button>
+</ion-content>

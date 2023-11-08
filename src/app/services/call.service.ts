@@ -88,7 +88,7 @@ export class CallService {
       }, (err: any) => {
         console.log(err)
       })
-      this.notify("esperando para unirse")
+      this.notify("esperando para unirse");
     })
     this.peer.on('call', (call: any) => {
       call.answer(this.local_stream);
