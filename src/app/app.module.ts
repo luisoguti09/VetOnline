@@ -1,4 +1,4 @@
-import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy, RouterOutlet } from '@angular/router';
 import { IonRouterOutlet, IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -16,7 +16,8 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { CalendarModule } from 'primeng/calendar';
 import { CallPageModule } from './call/call.module';
-import { AuthGoogleService } from './services/auth-google.service';
+import { GoogleLoginProvider, FacebookLoginProvider, SocialAuthServiceConfig } from 'angularx-social-login';
+import { AuthService } from './auth/auth.service';
 
 
 @NgModule({
@@ -42,9 +43,7 @@ import { AuthGoogleService } from './services/auth-google.service';
     AppModule
   ],
   providers: [{
-    provide:
-    RouteReuseStrategy,
-    useClass: IonicRouteStrategy,
+
     provide: 'SocialAuthServiceConfig',
     useValue: {
       autoLogin: true, //keeps the user signed in
@@ -52,14 +51,17 @@ import { AuthGoogleService } from './services/auth-google.service';
         {
           id: GoogleLoginProvider.PROVIDER_ID,
           provider: new GoogleLoginProvider('812772317778-j1k7i4oct0hb5rng5gehhkfm6poiu2d9.apps.googleusercontent.com') // your client id
-        }
-      ]
-    }
+        },
+        {
+          id: FacebookLoginProvider.PROVIDER_ID,
+          provider: new FacebookLoginProvider('1490073028509814'),
+        },
+      ],
+    } as SocialAuthServiceConfig,
   },
-    AuthGuardService],
-  
+    AuthService],
   bootstrap: [AppComponent],
-  exports:[
+  exports: [
     MessagesModule,
     DialogModule,
     ToastModule,
@@ -69,4 +71,4 @@ import { AuthGoogleService } from './services/auth-google.service';
     CUSTOM_ELEMENTS_SCHEMA
   ],
 })
-export class AppModule {}
+export class AppModule { }

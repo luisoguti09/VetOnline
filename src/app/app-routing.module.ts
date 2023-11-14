@@ -1,7 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginPage } from './login/login.page';
-import {authGuard} from './auth/auth.guard';
+import { authGuard } from './auth/auth.guard';
 import { AdminComponent } from './admin/admin/admin.component';
 
 const routes: Routes = [{
@@ -45,7 +45,7 @@ const routes: Routes = [{
         loadChildren: () => import('./call/call.module').then(m => m.CallPageModule)
       },
       {
-    
+
         path: 'dashboard-veterinarios',
         loadChildren: () => import('./dashboard-veterinarios/dashboard-veterinarios.module').then(m => m.DashboardVeterinariosPageModule)
       },
@@ -59,30 +59,25 @@ const routes: Routes = [{
       },
       {
         path: 'mascotas',
-        loadChildren: () => import('./mascotas/mascotas.module').then( m => m.MascotasPageModule)
+        loadChildren: () => import('./mascotas/mascotas.module').then(m => m.MascotasPageModule)
       },
       {
         path: 'detalle-mascotas',
-        loadChildren: () => import('./detalle-mascotas/detalle-mascotas.module').then( m => m.DetalleMascotasPageModule)
+        loadChildren: () => import('./detalle-mascotas/detalle-mascotas.module').then(m => m.DetalleMascotasPageModule)
       },
       {
         path: 'urgencia',
-        loadChildren: () => import('./urgencia/urgencia.module').then( m => m.UrgenciaPageModule)
+        loadChildren: () => import('./urgencia/urgencia.module').then(m => m.UrgenciaPageModule)
       },
+      {
+        path: 'logout',
+        loadChildren: () => import('./logout/logout.module').then(m => m.LogoutPageModule)
+      }
     ],
   }]
-},]  {
-    path: 'logout',
-    loadChildren: () => import('./logout/logout.module').then( m => m.LogoutPageModule)
-  }
-;
+},];
 
  
-
-  
-
-];
-
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

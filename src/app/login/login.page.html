@@ -3,8 +3,8 @@
     <ion-title>Vet Online</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content class="backgroundLog" >
-  <p-toast ></p-toast>
+<ion-content class="backgroundLog">
+  <p-toast></p-toast>
   <div>
     <ion-card>
       <div class="img-card">
@@ -26,14 +26,40 @@
           </ion-list>
         </form>
         <ion-buttons class="button-container">
-          <ion-button type="submit" (click)="loguedUser()" *ngIf="!authService.isLoggedIn"
-           class="colorLogin Button" >
+          <ion-button type="submit" (click)="loguedUser()" *ngIf="!authService.isLoggedIn" class="colorLogin Button">
             Ingresar
           </ion-button>
-          <a href="#" [routerLink]="['/registro']" class="footLogin">Registrarse</a>
-        </ion-buttons>
-      </ion-card-content>
-    </ion-card>
+          <ion-button (click)="loginWithGoogle()" mat-raised-button class="google-login-btn">
+            Google
+          </ion-button>
+          <h2 class="text-center mb-4">Login with Facebook in Angular</h2>
+          <div *ngIf="!isLoggedin">
+            <button type="button" (click)="loginWithFacebook()" class="btn btn-primary btn-block">Signin with
+              Facebook</button>
+          </div>
+          <div *ngIf="isLoggedin === true">
+            <ion-card>
+              <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control" [value]="socialUser.firstName" id="firstname" readonly>
+              </div>
+              <div class="form-group">
+                <label>Apellido</label>
+                <input type="text" class="form-control" [value]="socialUser.lastName" id="lastname" readonly>
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" [value]="socialUser.email" id="email" readonly>
+              </div>
+          </div>
+          <button type="button" (click)="signOut()" class="btn btn-primary">Sign Out</button>
+  </div>
+  </ion-card>
+  </div>
+  <a href="#" [routerLink]="['/registro']" class="footLogin">Registrarse</a>
+  </ion-buttons>
+  </ion-card-content>
+  </ion-card>
   </div>
 
 
