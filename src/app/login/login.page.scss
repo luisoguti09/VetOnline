@@ -44,6 +44,24 @@ ion-buttons.button-container{
     border-radius: 20px;
     flex-direction: column;
 }
+.google-login-btn{
+  background-color: #4285f4;
+  border: none;
+  color: #fff;
+  display: inline-block;
+  width: 190px;
+  border-radius: 5px;
+  border: thin solid #888;
+  box-shadow: 1px 1px 1px grey;
+  white-space: nowrap;
+  font-family: serif;
+  font-weight: normal;
+  background: url('/identity/sign-in/g-normal.png') transparent 5px 50% no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  width: 42px;
+  height: 42px;
+}
 
 .img-card{
   width: 100%;

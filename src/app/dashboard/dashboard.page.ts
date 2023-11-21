@@ -81,12 +81,10 @@ mostrarVets(){
 test(){
   this.fireserv.test();
 }
+
 goToDatVet() {
   this.vetServ.selectedVet = this.associated;
   //this.router.navigate(['/data-veterinario']);
   this.callSrv.createRoom();
 }
-
-
-
 }

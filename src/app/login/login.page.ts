@@ -76,13 +76,13 @@ export class LoginPage implements OnInit {
         }
       });
   }
-
+ //loguearse con Google
   loginWithGoogle(): void {
-    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID)
-      .then(() => this.router.navigate(['mainpage']));
+   // this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID)
+     // .then(() => this.router.navigate(['dashboard']));
   }
 
-
+ //define tipo de usuario
   tipoUser() {
     if (this.user) {
       this.logServ.loggedUser.id = this.id_user;
@@ -91,7 +91,7 @@ export class LoginPage implements OnInit {
       this.logServ.loggedUser.id = this.id_vet;
     }
   }
-
+  //muestra mensaje de error
   showError() {
     this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Complete todos los campos' });
   }

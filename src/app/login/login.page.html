@@ -26,16 +26,14 @@
           </ion-list>
         </form>
         <ion-buttons class="button-container">
-          <ion-button type="submit" (click)="loguedUser()" *ngIf="!authService.isLoggedIn" class="colorLogin Button">
-            Ingresar
-          </ion-button>
+          <ion-button type="submit" (click)="loguedUser()" *ngIf="!auth.service.isLoggedIn" 
+          class="colorLogin Button">Ingresar</ion-button>
           <ion-button (click)="loginWithGoogle()" mat-raised-button class="google-login-btn">
-            Google
+            Ingresar con Google
           </ion-button>
-          <h2 class="text-center mb-4">Login with Facebook in Angular</h2>
           <div *ngIf="!isLoggedin">
-            <button type="button" (click)="loginWithFacebook()" class="btn btn-primary btn-block">Signin with
-              Facebook</button>
+            <button type="button" (click)="loginWithFacebook()" class="btn btn-primary btn-block">
+              Ingresar con Facebook</button>
           </div>
           <div *ngIf="isLoggedin === true">
             <ion-card>
